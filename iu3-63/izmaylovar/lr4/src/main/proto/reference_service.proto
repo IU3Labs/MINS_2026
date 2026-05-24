@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package cinema.reference;
+
+option java_multiple_files = true;
+option java_package = "org.example.grpc.reference";
+option java_outer_classname = "ReferenceServiceProto";
+
+import "google/protobuf/empty.proto";
+
+message UuidRequest {
+  string id = 1;
+}
+
+message MovieDto {
+  string id = 1;
+  string title = 2;
+  int32 duration_minutes = 3;
+  string genre = 4;
+  string age_rating = 5;
+}
+
+message HallDto {
+  string id = 1;
+  string name = 2;
+  int32 rows = 3;
+  int32 seats_per_row = 4;
+}
+
+message MovieListResponse {
+  repeated MovieDto movies = 1;
+}
+
+message HallListResponse {
+  repeated HallDto halls = 1;
+}
+
+message CreateMovieRequest {
+  string title = 1;
+  int32 duration_minutes = 2;
+  string genre = 3;
+  string age_rating = 4;
+}
+
+message UpdateMovieRequest {
+  string id = 1;
+  string title = 2;
+  int32 duration_minutes = 3;
+  string genre = 4;
+  string age_rating = 5;
+}
+
+message CreateHallRequest {
+  string name = 1;
+  int32 rows = 2;
+  int32 seats_per_row = 3;
+}
+
+message UpdateHallRequest {
+  string id = 1;
+  string name = 2;
+  int32 rows = 3;
+  int32 seats_per_row = 4;
+}
+
+message ReferenceBundleRequest {
+  string movie_id = 1;
+  string hall_id = 2;
+}
+
+message ReferenceBundleResponse {
+  MovieDto movie = 1;
+  HallDto hall = 2;
+}
+
+service ReferenceService {
+  rpc ListMovies(google.protobuf.Empty) returns (MovieListResponse);
+  rpc GetMovie(UuidRequest) returns (MovieDto);
+  rpc CreateMovie(CreateMovieRequest) returns (MovieDto);
+  rpc UpdateMovie(UpdateMovieRequest) returns (MovieDto);
+  rpc DeleteMovie(UuidRequest) returns (google.protobuf.Empty);
+
+  rpc ListHalls(google.protobuf.Empty) returns (HallListResponse);
+  rpc GetHall(UuidRequest) returns (HallDto);
+  rpc CreateHall(CreateHallRequest) returns (HallDto);
+  rpc UpdateHall(UpdateHallRequest) returns (HallDto);
+  rpc DeleteHall(UuidRequest) returns (google.protobuf.Empty);
+
+  rpc GetReferenceBundle(ReferenceBundleRequest) returns (ReferenceBundleResponse);
+}
