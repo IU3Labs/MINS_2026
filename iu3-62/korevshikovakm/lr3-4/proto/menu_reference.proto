@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package menureference;
+
+// Справочник меню (Сервис B)
+
+service MenuReference {
+  rpc CreateCategory(CreateCategoryRequest) returns (CategoryMessage);
+  rpc CreateItem(CreateItemRequest) returns (ItemMessage);
+  rpc GetItem(GetItemRequest) returns (ItemMessage);
+  rpc ListMenu(Empty) returns (MenuSnapshot);
+}
+
+message Empty {}
+
+message CreateCategoryRequest {
+  string name = 1;
+}
+
+message CategoryMessage {
+  int32 id = 1;
+  string name = 2;
+}
+
+message CreateItemRequest {
+  int32 category_id = 1;
+  string name = 2;
+  string price_text = 3;
+}
+
+message ItemMessage {
+  int32 id = 1;
+  int32 category_id = 2;
+  string name = 3;
+  string price_decimal_string = 4;
+}
+
+message GetItemRequest {
+  int32 item_id = 1;
+}
+
+message MenuCategory {
+  int32 id = 1;
+  string name = 2;
+}
+
+message MenuItem {
+  int32 id = 1;
+  int32 category_id = 2;
+  string name = 3;
+  string price_decimal_string = 4;
+}
+
+message MenuSnapshot {
+  repeated MenuCategory categories = 1;
+  repeated MenuItem items = 2;
+}
