@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package com.cinema.proto.reference;
+
+option java_package = "com.cinema.proto.reference";
+option java_outer_classname = "ReferenceServiceOuterClass";
+
+import "google/protobuf/empty.proto";
+
+service ReferenceService {
+    // Movies
+    rpc CreateMovie (CreateMovieRequest) returns (MovieResponse);
+    rpc GetMovie (GetMovieRequest) returns (MovieResponse);
+    rpc ListMovies (google.protobuf.Empty) returns (MovieListResponse);
+
+    // Halls
+    rpc CreateHall (CreateHallRequest) returns (HallResponse);
+    rpc GetHall (GetHallRequest) returns (HallResponse);
+    rpc ListHalls (google.protobuf.Empty) returns (HallListResponse);
+
+    // Screenings
+    rpc CreateScreening (CreateScreeningRequest) returns (ScreeningResponse);
+    rpc GetScreening (GetScreeningRequest) returns (ScreeningDetailResponse);
+    rpc ListScreenings (google.protobuf.Empty) returns (ScreeningListResponse);
+}
+
+message CreateMovieRequest {
+    string title = 1;
+    int32 duration_minutes = 2;
+    string genre = 3;
+    int32 age_restriction = 4;
+}
+
+message MovieResponse {
+    string id = 1;
+    string title = 2;
+    int32 duration_minutes = 3;
+    string genre = 4;
+    int32 age_restriction = 5;
+}
+
+message GetMovieRequest {
+    string id = 1;
+}
+
+message MovieListResponse {
+    repeated MovieResponse movies = 1;
+}
+
+message CreateHallRequest {
+    string name = 1;
+    int32 rows = 2;
+    int32 seats_per_row = 3;
+}
+
+message HallResponse {
+    string id = 1;
+    string name = 2;
+    int32 rows = 3;
+    int32 seats_per_row = 4;
+}
+
+message GetHallRequest {
+    string id = 1;
+}
+
+message HallListResponse {
+    repeated HallResponse halls = 1;
+}
+
+message CreateScreeningRequest {
+    string movie_id = 1;
+    string hall_id = 2;
+    string start_time = 3;
+    double ticket_price = 4;
+}
+
+message ScreeningResponse {
+    string id = 1;
+}
+
+message GetScreeningRequest {
+    string screening_id = 1;
+}
+
+message ScreeningDetailResponse {
+    string id = 1;
+    string movie_id = 2;
+    string hall_id = 3;
+    string start_time = 4;
+    double ticket_price = 5;
+    int32 rows = 6;
+    int32 seats_per_row = 7;
+}
+
+message ScreeningListResponse {
+    repeated ScreeningDetailResponse screenings = 1;
+}
