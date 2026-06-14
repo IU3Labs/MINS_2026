@@ -1,0 +1,26 @@
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': 'fd', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент fd размещён в палате №101 | {'patient_id': 1, 'patient_name': 'fd', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Госпитализирован -> Выписан (выписка) | {'patient_id': 1, 'patient_name': 'fd', 'old_label': 'Госпитализирован', 'new_label': 'Выписан', 'reason': 'выписка'}
+[PATIENT_STATE_CHANGED] Пациент 1: Выписан -> Записан на приём (запись на приём) | {'patient_id': 1, 'patient_name': 'fd', 'old_label': 'Выписан', 'new_label': 'Записан на приём', 'reason': 'запись на приём'}
+[TEST] ok
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': 'аа', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент аа размещён в палате №101 | {'patient_id': 1, 'patient_name': 'аа', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': 'ghgh', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент ghgh размещён в палате №101 | {'patient_id': 1, 'patient_name': 'ghgh', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Госпитализирован -> Выписан (выписка) | {'patient_id': 1, 'patient_name': 'ghgh', 'old_label': 'Госпитализирован', 'new_label': 'Выписан', 'reason': 'выписка'}
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': '23', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент 23 размещён в палате №101 | {'patient_id': 1, 'patient_name': '23', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Госпитализирован -> Выписан (выписка) | {'patient_id': 1, 'patient_name': '23', 'old_label': 'Госпитализирован', 'new_label': 'Выписан', 'reason': 'выписка'}
+[PATIENT_STATE_CHANGED] Пациент 1: Выписан -> Записан на приём (запись на приём) | {'patient_id': 1, 'patient_name': '23', 'old_label': 'Выписан', 'new_label': 'Записан на приём', 'reason': 'запись на приём'}
+[PATIENT_STATE_CHANGED] Пациент 1: Записан на приём -> Не госпитализирован (завершение приёма (без госпитализации)) | {'patient_id': 1, 'patient_name': '23', 'old_label': 'Записан на приём', 'new_label': 'Не госпитализирован', 'reason': 'завершение приёма (без госпитализации)'}
+[APPOINTMENT_COMPLETED] Приём завершён для 23 | {'patient_id': 1, 'patient_name': '23', 'diagnosis': 'адада', 'prescription': 'пепе', 'appointment_date': '2026-04-22 22:30:48.937967'}
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': 'gjj', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент gjj размещён в палате №101 | {'patient_id': 1, 'patient_name': 'gjj', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Госпитализирован -> Выписан (выписка) | {'patient_id': 1, 'patient_name': 'gjj', 'old_label': 'Госпитализирован', 'new_label': 'Выписан', 'reason': 'выписка'}
+[PATIENT_STATE_CHANGED] Пациент 1: Выписан -> Записан на приём (запись на приём) | {'patient_id': 1, 'patient_name': 'gjj', 'old_label': 'Выписан', 'new_label': 'Записан на приём', 'reason': 'запись на приём'}
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': '1', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент 1 размещён в палате №101 | {'patient_id': 1, 'patient_name': '1', 'ward_id': 1, 'ward_number': 101}
+[PATIENT_STATE_CHANGED] Пациент 1: Госпитализирован -> Выписан (выписка) | {'patient_id': 1, 'patient_name': '1', 'old_label': 'Госпитализирован', 'new_label': 'Выписан', 'reason': 'выписка'}
+[PATIENT_STATE_CHANGED] Пациент 1: Выписан -> Записан на приём (запись на приём) | {'patient_id': 1, 'patient_name': '1', 'old_label': 'Выписан', 'new_label': 'Записан на приём', 'reason': 'запись на приём'}
+[PATIENT_STATE_CHANGED] Пациент 1: Не госпитализирован -> Госпитализирован (госпитализация) | {'patient_id': 1, 'patient_name': 'djskfkj', 'old_label': 'Не госпитализирован', 'new_label': 'Госпитализирован', 'reason': 'госпитализация'}
+[PATIENT_HOSPITALIZED] Пациент djskfkj размещён в палате №101 | {'patient_id': 1, 'patient_name': 'djskfkj', 'ward_id': 1, 'ward_number': 101}
