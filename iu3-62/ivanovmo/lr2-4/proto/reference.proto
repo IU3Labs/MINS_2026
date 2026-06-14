@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+service ReferenceService {
+  rpc GetTariff (TariffRequest) returns (TariffResponse);
+  rpc ValidateAddress (AddressRequest) returns (ValidationResponse);
+  rpc GetVehicleTypes (Empty) returns (VehicleTypesResponse);
+}
+
+message TariffRequest {
+  string zone = 1;
+  double weight_kg = 2;
+  double distance_km = 3;
+}
+
+message TariffResponse {
+  double cost_per_km = 1;
+  double cost_per_kg = 2;
+  double base_cost = 3;
+}
+
+message AddressRequest {
+  string address = 1;
+}
+
+message ValidationResponse {
+  bool is_valid = 1;
+  string message = 2;
+}
+
+message Empty {}
+
+message VehicleType {
+  string id = 1;
+  string name = 2;
+  double max_weight_kg = 3;
+}
+
+message VehicleTypesResponse {
+  repeated VehicleType types = 1;
+}
