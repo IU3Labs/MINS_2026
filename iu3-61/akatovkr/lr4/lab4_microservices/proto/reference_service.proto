@@ -1,0 +1,74 @@
+syntax = "proto3";
+
+package warehouse.reference;
+
+message Product {
+  string product_id = 1;
+  string name = 2;
+  double unit_price = 3;
+  repeated string tags = 4;
+}
+
+message KindInfo {
+  string code = 1;
+  string title = 2;
+}
+
+message AddProductRequest {
+  string product_id = 1;
+  string name = 2;
+  double unit_price = 3;
+  repeated string kind_codes = 4;
+}
+
+message AddProductResponse {
+  bool success = 1;
+  string message = 2;
+  Product product = 3;
+}
+
+message GetProductRequest {
+  string product_id = 1;
+}
+
+message GetProductResponse {
+  bool success = 1;
+  string message = 2;
+  Product product = 3;
+}
+
+message ListProductsRequest {
+  string sort_by = 1;
+}
+
+message ListProductsResponse {
+  bool success = 1;
+  string message = 2;
+  repeated Product products = 3;
+}
+
+message ListKindsRequest {}
+
+message ListKindsResponse {
+  repeated KindInfo kinds = 1;
+}
+
+message CompatibilityCheckRequest {
+  string candidate_product_id = 1;
+  repeated string existing_product_ids = 2;
+  string rule_set = 3;
+}
+
+message CompatibilityCheckResponse {
+  bool success = 1;
+  string message = 2;
+  bool compatible = 3;
+}
+
+service ReferenceService {
+  rpc AddProduct(AddProductRequest) returns (AddProductResponse);
+  rpc GetProduct(GetProductRequest) returns (GetProductResponse);
+  rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
+  rpc ListKinds(ListKindsRequest) returns (ListKindsResponse);
+  rpc CheckZoneCompatibility(CompatibilityCheckRequest) returns (CompatibilityCheckResponse);
+}
