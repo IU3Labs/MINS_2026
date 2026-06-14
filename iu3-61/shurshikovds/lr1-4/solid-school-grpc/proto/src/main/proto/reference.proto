@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_package = "org.example.grpc";
+option java_multiple_files = true;
+
+package reference;
+
+service ReferenceService {
+  rpc ValidateStudentExists (ValidateStudentRequest) returns (ValidationResponse);
+}
+
+message ValidateStudentRequest {
+  string trace_id = 1;
+  int64 student_id = 2;
+}
+
+message ValidationResponse {
+  bool valid = 1;
+  string message = 2;
+}

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: solid-school
+    profiles:
+      active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/solid_school
+    username: postgres
+    password: 1
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
