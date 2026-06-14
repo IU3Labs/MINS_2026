@@ -1,0 +1,148 @@
+syntax = "proto3";
+
+package travel.core;
+
+option java_package = "ru.bmstu.travel.proto.core";
+option java_outer_classname = "CoreProto";
+option java_multiple_files = true;
+
+message Empty {}
+
+enum DiscountType {
+  DISCOUNT_TYPE_UNSPECIFIED = 0;
+  PERCENTAGE = 1;
+  VIP = 2;
+  SEASONAL = 3;
+}
+
+message Discount {
+  string name = 1;
+  int32 percent = 2;
+  DiscountType type = 3;
+}
+
+message Client {
+  string id = 1;
+  string full_name = 2;
+  string phone = 3;
+  bool has_discount = 4;
+  Discount discount = 5;
+}
+
+message Tour {
+  string id = 1;
+  string title = 2;
+  string destination = 3;
+  double base_price = 4;
+  int32 capacity = 5;
+  int32 booked_seats = 6;
+}
+
+message Booking {
+  string id = 1;
+  string client_id = 2;
+  string client_name = 3;
+  string tour_id = 4;
+  string tour_title = 5;
+  double final_price = 6;
+  string created_at = 7;
+  string status = 8;
+}
+
+message AddClientRequest {
+  string full_name = 1;
+  string phone = 2;
+  bool has_discount = 3;
+  Discount discount = 4;
+}
+
+message AddTourRequest {
+  string title = 1;
+  string destination = 2;
+  double base_price = 3;
+  int32 capacity = 4;
+}
+
+message CreateBookingRequest {
+  string client_id = 1;
+  string tour_id = 2;
+}
+
+message CancelBookingRequest {
+  string booking_id = 1;
+}
+
+message QuickEstimateRequest {
+  string tour_id = 1;
+  string client_id = 2;
+  int32 travelers = 3;
+  int32 nights = 4;
+  int32 hotel_stars = 5;
+  string meal_type = 6;
+  string transport_type = 7;
+  bool insurance = 8;
+  bool urgent_visa = 9;
+  bool friday_promo = 10;
+  bool airport_transfer = 11;
+  bool sea_view = 12;
+}
+
+message ClientMutationResponse {
+  bool success = 1;
+  string message = 2;
+  Client client = 3;
+}
+
+message TourMutationResponse {
+  bool success = 1;
+  string message = 2;
+  Tour tour = 3;
+}
+
+message BookingResponse {
+  bool success = 1;
+  string message = 2;
+  Booking booking = 3;
+}
+
+message ListClientsResponse {
+  bool success = 1;
+  string message = 2;
+  repeated Client clients = 3;
+}
+
+message ListToursResponse {
+  bool success = 1;
+  string message = 2;
+  repeated Tour tours = 3;
+}
+
+message ListBookingsResponse {
+  repeated Booking bookings = 1;
+}
+
+message HistoryResponse {
+  repeated string events = 1;
+}
+
+message EstimateResponse {
+  bool success = 1;
+  string message = 2;
+  double total = 3;
+  double prepayment = 4;
+  double monthly_payment = 5;
+  string headline = 6;
+  repeated string explanation = 7;
+}
+
+service CoreService {
+  rpc ListTours(Empty) returns (ListToursResponse);
+  rpc ListClients(Empty) returns (ListClientsResponse);
+  rpc AddTour(AddTourRequest) returns (TourMutationResponse);
+  rpc AddClient(AddClientRequest) returns (ClientMutationResponse);
+  rpc CreateBooking(CreateBookingRequest) returns (BookingResponse);
+  rpc CancelBooking(CancelBookingRequest) returns (BookingResponse);
+  rpc ListBookings(Empty) returns (ListBookingsResponse);
+  rpc ListHistory(Empty) returns (HistoryResponse);
+  rpc QuickEstimate(QuickEstimateRequest) returns (EstimateResponse);
+}
