@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+option java_package = "proto";
+option java_outer_classname = "ReferenceServiceProto";
+
+service ReferenceService {
+  rpc GetServiceByName (ServiceRequest) returns (ServiceResponse);
+}
+
+message ServiceRequest {
+  string name = 1;
+  string trace_id = 2;
+}
+
+message ServiceResponse {
+  bool found = 1;
+  string name = 2;
+  double price = 3;
+  int32 duration_minutes = 4;
+  string error_message = 5;
+}
