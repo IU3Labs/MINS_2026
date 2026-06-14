@@ -1,0 +1,96 @@
+#include <msp430.h>
+
+unsigned char dma0_led_on[1]  = {0x02};
+unsigned char dma1_led_off[1] = {0x00};
+
+#define BRIGHT  750
+#define DIM     250
+
+unsigned int current_state = 0;
+
+int main(void)
+{
+    volatile unsigned int i;
+
+    WDTCTL = WDTPW + WDTHOLD;
+    FLL_CTL0 |= XCAP14PF;
+
+    do
+    {
+        IFG1 &= ~OFIFG;
+        for (i = 0x47FF; i > 0; i--);
+    }
+    while (IFG1 & OFIFG);
+
+    P2SEL |= BIT2;
+    P2DIR |= BIT2;
+
+    P5SEL &= ~BIT1;
+    P5DIR |= BIT1;
+
+    P1DIR &= ~BIT0;
+    P1IES |= BIT0;
+    P1IFG &= ~BIT0;
+    P1IE  |= BIT0;
+
+    TBCCR0 = 1000;
+
+    TBCCTL1 = OUTMOD_7;
+    TBCCTL2 = 0;
+
+    TBCTL = TASSEL_2 + MC_1 + TBCLR;
+    DMA0SA = (unsigned int)dma0_led_on;
+    DMA0DA = (unsigned int)&P5OUT;
+    DMA0SZ = 1;
+    DMA0CTL = DMASBDB + DMASRCINCR_0 + DMADSTINCR_0 + DMADT_4 + DMAEN;
+
+    DMA1SA = (unsigned int)dma1_led_off;
+    DMA1DA = (unsigned int)&P5OUT;
+    DMA1SZ = 1;
+    DMA1CTL = DMASBDB + DMASRCINCR_0 + DMADSTINCR_0 + DMADT_4 + DMAEN;
+
+    DMACTL0 = DMA0TSEL_8 + DMA1TSEL_2;
+
+    set_state(0);
+
+    __bis_SR_register(LPM0_bits + GIE);
+}
+
+void set_state(unsigned int state)
+{
+    current_state = state % 4;
+
+    switch (current_state)
+    {
+        case 0:
+            TBCCR1 = BRIGHT;
+            TBCCR2 = BRIGHT;
+            break;
+
+        case 1:
+            TBCCR1 = BRIGHT;
+            TBCCR2 = DIM;
+            break;
+
+        case 2:
+            TBCCR1 = DIM;
+            TBCCR2 = DIM;
+            break;
+
+        case 3:
+            TBCCR1 = DIM;
+            TBCCR2 = BRIGHT;
+            break;
+    }
+}
+
+#pragma vector=PORT1_VECTOR
+__interrupt void Port1_Handler(void)
+{
+    if (P1IFG & BIT0)
+    {
+        set_state(current_state + 1);
+
+        P1IFG &= ~BIT0;
+    }
+}

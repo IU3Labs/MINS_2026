@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package ru.bmstu.grpc;
+
+option java_multiple_files = true;
+option java_package = "ru.bmstu.grpc";
+
+//сервис
+service ReferenceService {
+    rpc GetTour (GetTourRequest) returns (TourResponse);
+
+    rpc GetClient (GetClientRequest) returns (ClientResponse);
+
+    rpc GetClientByEmail (GetClientByEmailRequest) returns (ClientResponse);
+
+    rpc CheckClientExists (CheckClientExistsRequest) returns (ExistsResponse);
+
+    rpc CheckTourExists (CheckTourExistsRequest) returns (ExistsResponse);
+
+    rpc GetAllTours (Empty) returns (TourListResponse);
+}
+
+//запросы
+message GetTourRequest {
+    int32 tour_id = 1;
+}
+
+message GetClientRequest {
+    int32 client_id = 1;
+}
+
+message GetClientByEmailRequest {
+    string email = 1;
+}
+
+message CheckClientExistsRequest {
+    int32 client_id = 1;
+}
+
+message CheckTourExistsRequest {
+    int32 tour_id = 1;
+}
+
+message Empty {}
+
+//ответы
+message TourResponse {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    string base_price = 4;
+    bool on_sale = 5;
+    string sale_percentage = 6;
+    string tour_type = 7;
+    string location_info = 8;
+}
+
+message ClientResponse {
+    int32 id = 1;
+    string name = 2;
+    string email = 3;
+    string personal_discount = 4;
+}
+
+message ExistsResponse {
+    bool exists = 1;
+}
+
+message TourListResponse {
+    repeated TourResponse tours = 1;
+}

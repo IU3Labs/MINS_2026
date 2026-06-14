@@ -1,0 +1,57 @@
+[2026-04-30 01:11:32] [TraceID: SERVICE-B] Запуск Reference Service...
+[2026-04-30 01:11:33] [TraceID: SERVICE-B] gRPC сервер запущен на порту 50051
+[2026-04-30 01:11:33] [TraceID: SERVICE-B] Ожидание запросов...
+[2026-04-30 01:12:15] [TraceID: SERVICE-B] Получен сигнал завершения, остановка сервера...
+[2026-04-30 01:12:15] [TraceID: SERVICE-B] Сервер остановлен
+[2026-04-30 01:37:47] [TraceID: SERVICE-B] Запуск Reference Service...
+[2026-04-30 01:37:48] [TraceID: SERVICE-B] gRPC сервер запущен на порту 50051
+[2026-04-30 01:37:48] [TraceID: SERVICE-B] Ожидание запросов...
+[2026-04-30 01:38:45] [TraceID: service-b-1777502325760] Service B: getClientByEmail вызван, email=123@gmail.com
+[2026-04-30 01:38:45] [TraceID: service-b-1777502325760] Service B: ошибка - Клиент не найден: 123@gmail.com
+[2026-04-30 01:39:53] [TraceID: service-b-1777502393959] Service B: getClientByEmail вызван, email=test@test.com
+[2026-04-30 01:39:53] [TraceID: service-b-1777502393959] Service B: клиент найден, id=1
+[2026-04-30 01:40:28] [TraceID: service-b-1777502428825] Service B: getAllTours вызван
+[2026-04-30 01:40:28] [TraceID: service-b-1777502428825] Service B: возвращено туров = 4
+[2026-04-30 01:42:46] [TraceID: service-b-1777502566559] Service B: getAllTours вызван
+[2026-04-30 01:42:46] [TraceID: service-b-1777502566559] Service B: возвращено туров = 4
+[2026-04-30 01:42:56] [TraceID: service-b-1777502576259] Service B: getClient вызван, clientId=1
+[2026-04-30 01:42:56] [TraceID: service-b-1777502576259] Service B: клиент найден, email=test@test.com
+[2026-04-30 01:42:56] [TraceID: service-b-1777502576349] Service B: getTour вызван, tourId=1
+[2026-04-30 01:42:56] [TraceID: service-b-1777502576349] Service B: тур найден, name=Золотое кольцо
+[2026-04-30 01:44:21] [TraceID: service-b-1777502661091] Service B: getAllTours вызван
+[2026-04-30 01:44:21] [TraceID: service-b-1777502661091] Service B: возвращено туров = 4
+[2026-04-30 01:44:28] [TraceID: service-b-1777502668038] Service B: getAllTours вызван
+[2026-04-30 01:44:28] [TraceID: service-b-1777502668038] Service B: возвращено туров = 4
+[2026-04-30 01:44:56] [TraceID: SERVICE-B] Получен сигнал завершения, остановка сервера...
+[2026-04-30 01:44:56] [TraceID: SERVICE-B] Сервер остановлен
+[2026-04-30 02:19:58] [TraceID: SERVICE-B] Запуск Reference Service...
+[2026-04-30 02:19:58] [TraceID: SERVICE-B] gRPC сервер запущен на порту 50051
+[2026-04-30 02:19:58] [TraceID: SERVICE-B] Ожидание запросов...
+[2026-04-30 02:20:22] [TraceID: service-b-1777504822251] Service B: getClientByEmail вызван, email=test@test.com
+[2026-04-30 02:20:22] [TraceID: service-b-1777504822251] Service B: клиент найден, id=1
+[2026-04-30 02:20:27] [TraceID: service-b-1777504827461] Service B: getAllTours вызван
+[2026-04-30 02:20:27] [TraceID: service-b-1777504827461] Service B: возвращено туров = 4
+[2026-04-30 02:20:33] [TraceID: service-b-1777504833221] Service B: getAllTours вызван
+[2026-04-30 02:20:33] [TraceID: service-b-1777504833221] Service B: возвращено туров = 4
+[2026-04-30 02:20:37] [TraceID: service-b-1777504837765] Service B: getClient вызван, clientId=1
+[2026-04-30 02:20:37] [TraceID: service-b-1777504837765] Service B: клиент найден, email=test@test.com
+[2026-04-30 02:20:37] [TraceID: service-b-1777504837781] Service B: getTour вызван, tourId=1
+[2026-04-30 02:20:37] [TraceID: service-b-1777504837781] Service B: тур найден, name=Золотое кольцо
+[2026-04-30 02:25:44] [TraceID: SERVICE-B] Получен сигнал завершения, остановка сервера...
+[2026-04-30 02:25:44] [TraceID: SERVICE-B] Сервер остановлен
+[2026-04-30 13:29:20] [TraceID: SERVICE-B] Запуск Reference Service...
+[2026-04-30 13:29:21] [TraceID: SERVICE-B] gRPC сервер запущен на порту 50051
+[2026-04-30 13:29:21] [TraceID: SERVICE-B] Ожидание запросов...
+[2026-04-30 13:31:48] [TraceID: service-b-1777545108549] Service B: getClientByEmail вызван, email=nasty@gmail.com
+[2026-04-30 13:31:48] [TraceID: service-b-1777545108549] Service B: ошибка - Клиент не найден: nasty@gmail.com
+[2026-04-30 13:36:36] [TraceID: service-b-1777545396196] Service B: getClientByEmail вызван, email=test@test.com
+[2026-04-30 13:36:36] [TraceID: service-b-1777545396196] Service B: клиент найден, id=1
+[2026-04-30 13:40:35] [TraceID: service-b-1777545635780] Service B: getAllTours вызван
+[2026-04-30 13:40:35] [TraceID: service-b-1777545635780] Service B: возвращено туров = 4
+[2026-04-30 13:52:13] [TraceID: SERVICE-B] Получен сигнал завершения, остановка сервера...
+[2026-04-30 13:52:13] [TraceID: SERVICE-B] Сервер остановлен
+[2026-04-30 18:52:17] [TraceID: SERVICE-B] Запуск Reference Service...
+[2026-04-30 18:52:18] [TraceID: SERVICE-B] gRPC сервер запущен на порту 50051
+[2026-04-30 18:52:18] [TraceID: SERVICE-B] Ожидание запросов...
+[2026-04-30 18:52:42] [TraceID: SERVICE-B] Получен сигнал завершения, остановка сервера...
+[2026-04-30 18:52:42] [TraceID: SERVICE-B] Сервер остановлен
