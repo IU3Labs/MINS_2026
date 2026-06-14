@@ -1,0 +1,11 @@
+2026-05-19 16:27:14,549 | reference-service | INFO | trace=- | Reference Service запущен на 127.0.0.1:50052
+2026-05-19 16:27:54,442 | reference-service | INFO | trace=7c03b184876f47b8992943bafb0c2c9b | Запрос ListProducts со стратегией сортировки id
+2026-05-19 16:28:13,052 | reference-service | INFO | trace=48ad55d914ee46e1ad564b3ed31c99b8 | Запрос GetProduct для товара 1
+2026-05-19 16:28:51,651 | reference-service | INFO | trace=35c43cc98cce466687a1768ebf4494fa | Запрос GetProduct для товара 1
+2026-05-19 16:28:51,653 | reference-service | INFO | trace=35c43cc98cce466687a1768ebf4494fa | Запрос CheckZoneCompatibility для товара 1 с набором правил sanpin
+2026-05-19 16:30:30,246 | reference-service | INFO | trace=- | Reference Service запущен на 127.0.0.1:50052
+2026-05-19 16:30:41,040 | reference-service | INFO | trace=3f7908280942439aafc0d145883e470e | Запрос ListProducts со стратегией сортировки name
+2026-05-19 16:30:47,233 | reference-service | INFO | trace=9bbb9d79a96e4170adb244aaea63d9f8 | Запрос ListProducts со стратегией сортировки ada
+2026-05-19 16:30:47,234 | reference-service | WARNING | trace=9bbb9d79a96e4170adb244aaea63d9f8 | Ошибка ListProducts: Неизвестная стратегия сортировки 'ada'. Доступно: id (по ID), name (по названию), price (по цене), tags (по числу тегов)
+2026-05-20 18:45:13,810 | reference-service | INFO | trace=- | Reference Service запущен на 127.0.0.1:50052
+2026-05-20 18:46:15,856 | reference-service | INFO | trace=5c6e9bec837042e8b9e1d38b72c4e18b | Запрос ListProducts со стратегией сортировки id

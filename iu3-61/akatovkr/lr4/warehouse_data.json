@@ -1,0 +1,48 @@
+{
+  "zones": {
+    "A": {
+      "1": 12
+    },
+    "B": {
+      "1": 12
+    },
+    "C": {
+      "10": 1
+    }
+  },
+  "catalog": {
+    "1": {
+      "product_id": "1",
+      "name": "qwe",
+      "unit_price": 123.0,
+      "tags": [
+        "chemical",
+        "hazard"
+      ]
+    },
+    "2": {
+      "product_id": "2",
+      "name": "asd",
+      "unit_price": 234.0,
+      "tags": [
+        "electronics"
+      ]
+    },
+    "3": {
+      "product_id": "3",
+      "name": "zxc",
+      "unit_price": 345.0,
+      "tags": [
+        "electronics"
+      ]
+    },
+    "10": {
+      "product_id": "10",
+      "name": "Milk",
+      "unit_price": 50.0,
+      "tags": [
+        "food"
+      ]
+    }
+  }
+}

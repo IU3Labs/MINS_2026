@@ -1,0 +1,7 @@
+2026-05-19 16:27:26,631 | core-service | INFO | trace=- | Core Service запущен на 127.0.0.1:50051. Reference target=127.0.0.1:50052, rule_set=sanpin
+2026-05-19 16:28:13,047 | core-service | INFO | trace=48ad55d914ee46e1ad564b3ed31c99b8 | Запрос ListZone для зоны A
+2026-05-19 16:28:51,649 | core-service | INFO | trace=35c43cc98cce466687a1768ebf4494fa | Запрос AddStock: zone=A product=1 qty=1
+2026-05-19 16:28:51,656 | core-service | INFO | trace=35c43cc98cce466687a1768ebf4494fa | В зону A добавлено 1 ед. товара 1. Текущий остаток: 13
+2026-05-19 16:29:35,923 | core-service | INFO | trace=f2dfa0731c284dd183468c159291de61 | Запрос AddStock: zone=A product=1 qty=1
+2026-05-19 16:29:35,925 | core-service | ERROR | trace=f2dfa0731c284dd183468c159291de61 | Reference Service недоступен при AddStock: Справочный сервис недоступен. Операция не выполнена. Повторите попытку позже. Техническая деталь: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:50052: Failed to connect to remote host: Connection refused
+2026-05-20 18:45:34,635 | core-service | INFO | trace=- | Core Service запущен на 127.0.0.1:50051. Reference target=127.0.0.1:50052, rule_set=sanpin

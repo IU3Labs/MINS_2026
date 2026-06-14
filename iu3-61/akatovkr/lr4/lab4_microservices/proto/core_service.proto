@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package warehouse.core;
+
+import "reference_service.proto";
+
+message AddStockRequest {
+  string zone = 1;
+  string product_id = 2;
+  int32 qty = 3;
+}
+
+message RemoveStockRequest {
+  string zone = 1;
+  string product_id = 2;
+  int32 qty = 3;
+}
+
+message MoveStockRequest {
+  string from_zone = 1;
+  string to_zone = 2;
+  string product_id = 3;
+  int32 qty = 4;
+}
+
+message OperationResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message ListZonesRequest {}
+
+message ListZonesResponse {
+  repeated string zones = 1;
+}
+
+message ListZoneRequest {
+  string zone = 1;
+}
+
+message ZoneItem {
+  warehouse.reference.Product product = 1;
+  int32 qty = 2;
+}
+
+message ListZoneResponse {
+  bool success = 1;
+  string message = 2;
+  repeated ZoneItem items = 3;
+}
+
+message ZoneStats {
+  string zone = 1;
+  int32 units = 2;
+  int32 positions = 3;
+  double value = 4;
+}
+
+message TagStats {
+  string tag = 1;
+  int32 units = 2;
+}
+
+message ProductStats {
+  string product_id = 1;
+  string name = 2;
+  int32 units = 3;
+  double value = 4;
+}
+
+message WarehouseSummary {
+  int32 total_units = 1;
+  int32 total_positions = 2;
+  double total_value = 3;
+  repeated ZoneStats by_zone = 4;
+  repeated TagStats by_tag = 5;
+  repeated ProductStats by_product = 6;
+}
+
+message GetSummaryRequest {}
+
+message GetSummaryResponse {
+  bool success = 1;
+  string message = 2;
+  WarehouseSummary summary = 3;
+}
+
+service CoreService {
+  rpc AddStock(AddStockRequest) returns (OperationResponse);
+  rpc RemoveStock(RemoveStockRequest) returns (OperationResponse);
+  rpc MoveStock(MoveStockRequest) returns (OperationResponse);
+  rpc ListZones(ListZonesRequest) returns (ListZonesResponse);
+  rpc ListZone(ListZoneRequest) returns (ListZoneResponse);
+  rpc GetSummary(GetSummaryRequest) returns (GetSummaryResponse);
+}
