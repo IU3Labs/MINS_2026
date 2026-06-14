@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: reference-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gruzomarket
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+grpc:
+  server:
+    port: 9090
+
+logging:
+  level:
+    gruzomarket: DEBUG
+    io.grpc: DEBUG
+    net.devh: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{trace_id:-}] %-5level %logger{36} - %msg%n"

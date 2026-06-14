@@ -1,0 +1,16 @@
+package gruzomarket.reference.repository;
+
+import gruzomarket.reference.entity.ProductByBrand;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+
+public interface ProductByBrandRepository extends JpaRepository<ProductByBrand, ProductByBrand.ProductBrandId> {
+    List<ProductByBrand> findByBrandId(Long brandId);
+    List<ProductByBrand> findByProductId(Long productId);
+
+    @Query("SELECT COUNT(pb) FROM ProductByBrand pb WHERE pb.brand.id = :brandId")
+    int countProductsByBrandId(@Param("brandId") Long brandId);
+}
