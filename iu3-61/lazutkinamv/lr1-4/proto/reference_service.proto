@@ -1,0 +1,30 @@
+syntax = "proto3";
+option java_package = "ru.iu3.lab4.proto.reference";
+option java_multiple_files = true;
+package reference;
+
+service ReferenceService {
+  rpc ValidateVehicle(ValidateVehicleRequest) returns (ValidateVehicleResponse);
+  rpc GetAllVehicles(GetAllVehiclesRequest) returns (stream GetAllVehiclesResponse);
+}
+
+message ValidateVehicleRequest {
+  string vehicle_id = 1;
+  string trace_id = 2;
+}
+
+message ValidateVehicleResponse {
+  bool exists = 1;
+  string vehicle_type = 2;
+  string error = 3;
+}
+
+message GetAllVehiclesRequest {
+  string trace_id = 1;
+}
+
+message GetAllVehiclesResponse {
+  string vehicle_id = 1;
+  string type = 2;
+  double capacity = 3;
+}
