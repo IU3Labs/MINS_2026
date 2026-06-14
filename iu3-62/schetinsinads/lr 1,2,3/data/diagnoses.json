@@ -1,0 +1,26 @@
+[
+  {
+    "id": "e2eac952472647c9bd09f7dd54436b89",
+    "patient_id": "2b7a420b69e847a8bb167b0626cdeb07",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "diagnosed_at": "2027-03-04 17:00",
+    "diagnosis": "йфя",
+    "notes": ""
+  },
+  {
+    "id": "f5b11ee4ac0644d696074257e711589d",
+    "patient_id": "9460a78d3cb247a782df18cdcccd7202",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "diagnosed_at": "2026-03-03 18:00",
+    "diagnosis": "терапия",
+    "notes": ""
+  },
+  {
+    "id": "eed16fb81c8848c1b5192efc6e7bba5c",
+    "patient_id": "716c247efbc84ca9b10f7c830399be97",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "diagnosed_at": "2026-05-05 10:00",
+    "diagnosis": "шгпрп",
+    "notes": ""
+  }
+]

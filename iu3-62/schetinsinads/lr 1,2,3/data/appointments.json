@@ -1,0 +1,42 @@
+[
+  {
+    "id": "e1b1245df17c4d22ac6dc1213a00062e",
+    "patient_id": "2b7a420b69e847a8bb167b0626cdeb07",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "starts_at": "2027-03-02 18:00",
+    "duration_min": 30,
+    "ward_id": null
+  },
+  {
+    "id": "fc81a2c9708141ffa7a7433158a016f1",
+    "patient_id": "9460a78d3cb247a782df18cdcccd7202",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "starts_at": "2027-03-05 16:00",
+    "duration_min": 30,
+    "ward_id": null
+  },
+  {
+    "id": "9334c37ca08447ed9bed24f19a3e1f07",
+    "patient_id": "716c247efbc84ca9b10f7c830399be97",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "starts_at": "2026-05-05 10:00",
+    "duration_min": 60,
+    "ward_id": null
+  },
+  {
+    "id": "7167a59c26b4450593e6410dd801074b",
+    "patient_id": "65705ca84a114b72ac923f87e37a4432",
+    "doctor_id": "3cd1525360df4b539f161f9adca14c5c",
+    "starts_at": "2027-03-03 12:00",
+    "duration_min": 60,
+    "ward_id": null
+  },
+  {
+    "id": "4197535ec8f74abfae39d27f7fa68695",
+    "patient_id": "2b7a420b69e847a8bb167b0626cdeb07",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "starts_at": "2026-04-16 20:00",
+    "duration_min": 60,
+    "ward_id": null
+  }
+]

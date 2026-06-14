@@ -1,0 +1,9 @@
+[project]
+name = "hospital-system-lab"
+version = "0.1.0"
+description = "Console information system for a hospital (SOLID)"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+hospital-system = "hospital_system.__main__:main"

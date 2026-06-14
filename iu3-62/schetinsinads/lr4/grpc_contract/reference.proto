@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package reference;
+
+service ReferenceValidator {
+  rpc ValidateIds (ValidateRequest) returns (ValidateResponse);
+  rpc GetPatientName (IdRequest) returns (NameResponse);
+  rpc GetDoctorName (IdRequest) returns (NameResponse);
+  rpc GetWardNumber (IdRequest) returns (NameResponse);
+}
+
+message ValidateRequest {
+  string trace_id = 1;
+  string patient_id = 2;
+  string doctor_id = 3;
+  string ward_id = 4;
+}
+
+message ValidateResponse {
+  bool patient_exists = 1;
+  bool doctor_exists = 2;
+  bool ward_exists = 3;
+  string message = 4;
+}
+
+message IdRequest {
+  string trace_id = 1;
+  string id = 2;
+}
+
+message NameResponse {
+  string value = 1;
+}
