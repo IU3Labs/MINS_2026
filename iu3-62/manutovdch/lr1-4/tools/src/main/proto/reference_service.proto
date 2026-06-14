@@ -1,0 +1,156 @@
+syntax = "proto3";
+
+package reference;
+
+option java_package = "gruzomarket.reference.grpc";
+option java_multiple_files = true;
+
+service ReferenceService {
+
+  rpc GetProduct (GetProductRequest) returns (ProductResponse);
+  rpc GetProductsByIds (GetProductsByIdsRequest) returns (ProductListResponse);
+  rpc SearchProducts (SearchProductsRequest) returns (ProductListResponse);
+  rpc DeductStock (DeductStockRequest) returns (DeductStockResponse);
+
+  rpc GetCategory (GetCategoryRequest) returns (CategoryResponse);
+  rpc ListCategories (ListCategoriesRequest) returns (CategoryListResponse);
+  rpc ListCategoryGroups (ListCategoryGroupsRequest) returns (CategoryGroupListResponse);
+
+  rpc GetBrand (GetBrandRequest) returns (BrandResponse);
+  rpc ListBrands (ListBrandsRequest) returns (BrandListResponse);
+  rpc ExistsBrandByName (ExistsBrandByNameRequest) returns (ExistsResponse);
+
+  rpc GetBrandsByProduct (GetBrandsByProductRequest) returns (BrandListResponse);
+  rpc GetProductsByBrand (GetProductsByBrandRequest) returns (ProductListResponse);
+
+  rpc ExistsProduct (ExistsProductRequest) returns (ExistsResponse);
+  rpc GetProductCategoryIds (GetProductCategoryIdsRequest) returns (ProductCategoryIdsResponse);
+
+  rpc HealthCheck (HealthCheckRequest) returns (HealthCheckResponse);
+}
+
+message ProductResponse {
+  int64 id = 1;
+  string name = 2;
+  string article = 3;
+  string description = 4;
+  double price = 5;
+  int32 quantity = 6;
+  int64 category_id = 7;
+  string category_name = 8;
+  string original_auto = 9;
+  bool is_visible = 10;
+  string image_url = 11;
+  repeated string additional_image_urls = 12;
+}
+
+message CategoryResponse {
+  int64 id = 1;
+  string name = 2;
+  int64 parent_id = 3;
+  int32 product_count = 4;
+  string image_url = 5;
+}
+
+message BrandResponse {
+  int64 id = 1;
+  string name = 2;
+  int32 product_count = 3;
+}
+
+message CategoryGroupResponse {
+  string group_name = 1;
+  repeated CategoryResponse categories = 2;
+}
+
+// Requests
+message GetProductRequest {
+  int64 id = 1;
+}
+
+message GetProductsByIdsRequest {
+  repeated int64 ids = 1;
+}
+
+message SearchProductsRequest {
+  string query = 1;
+}
+
+message DeductStockRequest {
+  int64 product_id = 1;
+  int32 quantity = 2;
+}
+
+message DeductStockResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message GetCategoryRequest {
+  int64 id = 1;
+}
+
+message ListCategoriesRequest {
+}
+
+message ListCategoryGroupsRequest {
+}
+
+message GetBrandRequest {
+  int64 id = 1;
+}
+
+message ListBrandsRequest {
+}
+
+message ExistsBrandByNameRequest {
+  string name = 1;
+}
+
+message ExistsProductRequest {
+  int64 id = 1;
+}
+
+message GetBrandsByProductRequest {
+  int64 product_id = 1;
+}
+
+message GetProductsByBrandRequest {
+  int64 brand_id = 1;
+}
+
+message GetProductCategoryIdsRequest {
+  repeated int64 product_ids = 1;
+}
+
+message ProductCategoryIdsResponse {
+  map<int64, int64> product_category_map = 1;
+}
+
+// Generic wrappers
+message ExistsResponse {
+  bool exists = 1;
+}
+
+message ProductListResponse {
+  repeated ProductResponse products = 1;
+}
+
+message CategoryListResponse {
+  repeated CategoryResponse categories = 1;
+}
+
+message CategoryGroupListResponse {
+  repeated CategoryGroupResponse groups = 1;
+}
+
+message BrandListResponse {
+  repeated BrandResponse brands = 1;
+}
+
+message HealthCheckRequest {
+}
+
+message HealthCheckResponse {
+  string status = 1;
+}
