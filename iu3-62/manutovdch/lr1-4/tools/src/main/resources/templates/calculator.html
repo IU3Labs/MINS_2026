@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layouts/base}" lang="ru">
+
+<head>
+    <title>Калькулятор стоимости</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <section class="py-5 mt-5">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold mb-4">Калькулятор <span class="brand-highlight">стоимости</span></h1>
+                <p class="lead text-light mb-0 mx-auto" style="max-width: 700px; opacity: 0.9;">
+                    Быстрый расчёт ориентировочной стоимости заказа без оформления.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-4">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="mission-card p-4">
+                            <h3 class="h5 mb-3">Добавьте товары</h3>
+
+                            <div class="input-group mb-3">
+                                <input type="text" id="productSearch" class="form-control bg-dark border-secondary text-white"
+                                    placeholder="Поиск товаров по названию или артикулу...">
+                                <button class="btn btn-orange" type="button" id="searchBtn">
+                                    <i class="fas fa-search"></i> Найти
+                                </button>
+                            </div>
+
+                            <div id="productSearchResults" class="mb-3" style="max-height: 200px; overflow-y: auto;"></div>
+
+                            <form id="estimateForm">
+                                <div id="selectedItems">
+                                    <p class="text-muted small" id="emptyItemsMsg">Товары не добавлены. Найдите товары выше и добавьте их в расчёт.</p>
+                                </div>
+
+                                <hr class="border-secondary">
+
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="expressDelivery">
+                                            <label class="form-check-label text-muted" for="expressDelivery">
+                                                Экспресс-доставка (+10%)
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" id="promoCode" class="form-control bg-dark border-secondary text-white"
+                                            placeholder="Промокод (PROMO10, SALE20, GRUZO5)">
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-orange w-100 mt-3">
+                                    <i class="fas fa-calculator me-2"></i>Рассчитать стоимость
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="stat-card p-4 h-100">
+                            <h3 class="h5 mb-3">Результат расчёта</h3>
+                            <div id="estimateResult">
+                                <p class="text-muted small mb-0">Нажмите «Рассчитать стоимость», чтобы увидеть результат.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <th:block layout:fragment="scripts">
+            <script th:src="@{/js/calculator.js}"></script>
+        </th:block>
+    </div>
+</body>
+
+</html>
