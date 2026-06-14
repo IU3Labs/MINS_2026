@@ -1,0 +1,15 @@
+{
+  "entity": "patients",
+  "items": [
+    {
+      "id": 1,
+      "name": "fd",
+      "age": 23,
+      "state": "Записан на приём",
+      "state_key": "scheduled",
+      "ward_id": null,
+      "diagnosis_history": [],
+      "outstanding_debt": 0.0
+    }
+  ]
+}

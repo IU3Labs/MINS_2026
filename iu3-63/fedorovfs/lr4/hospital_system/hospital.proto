@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package hospital;
+
+// Сервис справочников (Service B)
+service ReferenceService {
+    rpc GetDoctor (GetDoctorRequest) returns (DoctorResponse);
+    rpc GetWard (GetWardRequest) returns (WardResponse);
+    rpc AddDoctor (AddDoctorRequest) returns (DoctorResponse);
+    rpc ListDoctors (Empty) returns (DoctorListResponse);
+}
+
+message Empty {}
+
+message GetDoctorRequest {
+    int32 doctor_id = 1;
+}
+
+message AddDoctorRequest {
+    string name = 1;
+    string specialization = 2;
+}
+
+message DoctorResponse {
+    bool exists = 1;
+    int32 id = 2;
+    string name = 3;
+    string specialization = 4;
+}
+
+message DoctorListResponse {
+    repeated DoctorResponse doctors = 1;
+}
+
+message GetWardRequest {
+    int32 ward_id = 1;
+}
+
+message WardResponse {
+    bool exists = 1;
+    int32 id = 2;
+    int32 number = 3;
+    int32 capacity = 4;
+}
