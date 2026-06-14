@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+package reference;
+
+option java_multiple_files = true;
+option java_package = "org.example.reference.grpc";
+
+service ReferenceService {
+
+  // ── Валидация существования ──────────────────────────
+  rpc ValidateStudentExists   (ValidateStudentRequest)   returns (ValidationResponse);
+  rpc ValidateTeacherExists   (ValidateTeacherRequest)   returns (ValidationResponse);
+  rpc ValidateSchoolClassExists (ValidateSchoolClassRequest) returns (ValidationResponse);
+
+  // ── Получение одной сущности ─────────────────────────
+  rpc GetStudent  (GetStudentRequest)  returns (StudentResponse);
+  rpc GetTeacher  (GetTeacherRequest)  returns (TeacherResponse);
+
+  // ── Списки ───────────────────────────────────────────
+  rpc ListTeachers         (ListTeachersRequest)         returns (ListTeachersResponse);
+  rpc ListSchoolClasses    (ListSchoolClassesRequest)    returns (ListSchoolClassesResponse);
+  rpc ListStudentsByClass  (ListStudentsByClassRequest)  returns (ListStudentsResponse);
+  rpc ListStudents (ListStudentsRequest) returns (ListStudentsResponse);
+
+  // -- CRUD ----------------------------------------------
+  rpc CreateStudent (CreateStudentRequest) returns (StudentResponse);
+  rpc DeleteStudent (DeleteStudentRequest) returns (OperationStatusResponse);
+  rpc CreateTeacher (CreateTeacherRequest) returns (TeacherResponse);
+  rpc DeleteTeacher (DeleteTeacherRequest) returns (OperationStatusResponse);
+}
+
+// ── Общие ────────────────────────────────────────────────
+
+message ValidationResponse {
+  bool   valid   = 1;
+  string message = 2;
+}
+
+// ── Validate ─────────────────────────────────────────────
+
+message ValidateStudentRequest {
+  string trace_id  = 1;
+  int64  student_id = 2;
+}
+
+message ValidateTeacherRequest {
+  string trace_id   = 1;
+  int64  teacher_id = 2;
+}
+
+message ValidateSchoolClassRequest {
+  string trace_id       = 1;
+  int64  school_class_id = 2;
+}
+
+// ── Get Student ──────────────────────────────────────────
+
+message GetStudentRequest {
+  string trace_id  = 1;
+  int64  student_id = 2;
+}
+
+message ListStudentsRequest {
+  string trace_id = 1;
+}
+
+message StudentResponse {
+  int64  id              = 1;
+  string last_name       = 2;
+  string first_name      = 3;
+  string middle_name     = 4;
+  int64  school_class_id = 5;
+  string school_class_name = 6;
+}
+
+// -- CRUD Student ----------------------------------------
+
+message CreateStudentRequest {
+  string trace_id = 1;
+  string last_name = 2;
+  string first_name = 3;
+  string middle_name = 4;
+  string birth_date = 5;      // ISO: yyyy-MM-dd
+  int64 school_class_id = 6;
+}
+
+message DeleteStudentRequest {
+  string trace_id = 1;
+  int64 student_id = 2;
+}
+
+message OperationStatusResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ── Get Teacher ──────────────────────────────────────────
+
+message GetTeacherRequest {
+  string trace_id   = 1;
+  int64  teacher_id = 2;
+}
+
+message TeacherResponse {
+  int64  id          = 1;
+  string last_name   = 2;
+  string first_name  = 3;
+  string middle_name = 4;
+  string specialty   = 5;
+}
+
+message CreateTeacherRequest {
+  string trace_id = 1;
+  string last_name = 2;
+  string first_name = 3;
+  string middle_name = 4;
+  string specialty = 5;
+}
+
+message DeleteTeacherRequest {
+  string trace_id = 1;
+  int64 teacher_id = 2;
+}
+
+// ── List Teachers ────────────────────────────────────────
+
+message ListTeachersRequest {
+  string trace_id = 1;
+}
+
+message TeacherDto {
+  int64  id          = 1;
+  string last_name   = 2;
+  string first_name  = 3;
+  string middle_name = 4;
+  string specialty   = 5;
+}
+
+message ListTeachersResponse {
+  repeated TeacherDto teachers = 1;
+}
+
+// ── List SchoolClasses ───────────────────────────────────
+
+message ListSchoolClassesRequest {
+  string trace_id = 1;
+}
+
+message SchoolClassDto {
+  int64  id     = 1;
+  int32  grade  = 2;
+  string letter = 3;
+}
+
+message ListSchoolClassesResponse {
+  repeated SchoolClassDto classes = 1;
+}
+
+// ── List Students by Class ───────────────────────────────
+
+message ListStudentsByClassRequest {
+  string trace_id       = 1;
+  int64  school_class_id = 2;
+}
+
+message StudentDto {
+  int64  id          = 1;
+  string last_name   = 2;
+  string first_name  = 3;
+  string middle_name = 4;
+}
+
+message ListStudentsResponse {
+  repeated StudentDto students = 1;
+}

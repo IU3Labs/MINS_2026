@@ -1,0 +1,3 @@
+rootProject.name = 'solid-school-grpc'
+include 'reference-service'
+include 'core-service'

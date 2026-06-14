@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+
+grpc:
+  client:
+    reference-service:
+      address: static://localhost:9090
+      negotiation-type: plaintext
+
+spring:
+  grpc:
+    client:
+      channels:
+        reference-service:
+          address: static://localhost:9090
+  application:
+    name: solid-school
+    profiles:
+      active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/solid_school
+    username: postgres
+    password: 1
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
