@@ -1,0 +1,20 @@
+[13.06.2026 14:25:27] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Война и Мир
+[13.06.2026 14:25:27] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Vogue
+[13.06.2026 14:25:27] ✅ CREATE_USER | User: 1 | Иван Иванов
+[13.06.2026 14:25:27] ✅ CREATE_USER | User: 2 | Петр Петров
+[13.06.2026 14:34:12] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Война и Мир
+[13.06.2026 14:34:12] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Vogue
+[13.06.2026 14:34:12] ✅ CREATE_USER | User: 1 | Иван Иванов
+[13.06.2026 14:34:12] ✅ CREATE_USER | User: 2 | Петр Петров
+[13.06.2026 14:46:46] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Война и Мир
+[13.06.2026 14:46:46] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Vogue
+[13.06.2026 14:46:46] ✅ CREATE_USER | User: 1 | Иван Иванов
+[13.06.2026 14:46:46] ✅ CREATE_USER | User: 2 | Петр Петров
+[13.06.2026 15:01:19] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Война и Мир
+[13.06.2026 15:01:19] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Vogue
+[13.06.2026 15:01:19] ✅ CREATE_USER | User: 1 | Иван Иванов
+[13.06.2026 15:01:19] ✅ CREATE_USER | User: 2 | Петр Петров
+[13.06.2026 17:15:24] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Война и Мир
+[13.06.2026 17:15:24] ✅ CREATE_PUBLICATION | User: SYSTEM | Создано: Vogue
+[13.06.2026 17:15:24] ✅ CREATE_USER | User: 1 | Иван Иванов
+[13.06.2026 17:15:24] ✅ CREATE_USER | User: 2 | Петр Петров

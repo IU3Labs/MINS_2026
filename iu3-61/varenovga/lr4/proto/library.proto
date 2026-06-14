@@ -1,0 +1,61 @@
+syntax = "proto3";
+package library;
+option java_package = "library.grpc";
+option java_multiple_files = true;
+
+message ValidateBorrowRequest {
+  string user_email = 1;
+  int32 requested_days = 2;
+  string trace_id = 3;
+}
+message ValidateBorrowResponse {
+  bool is_valid = 1;
+  int32 max_allowed_days = 2;
+  string user_category = 3;
+  string error_message = 4;
+  string trace_id = 5;
+}
+
+message ValidateUserRequest {
+  string name = 1;
+  string email = 2;
+  string trace_id = 3;
+}
+message ValidateUserResponse {
+  bool is_valid = 1;
+  string user_category = 2;
+  string error_message = 3;
+  string trace_id = 4;
+}
+
+message ValidatePublicationRequest {
+  string title = 1;
+  int32 year = 2;
+  string isbn = 3;
+  string trace_id = 4;
+}
+message ValidatePublicationResponse {
+  bool is_valid = 1;
+  string error_message = 2;
+  string trace_id = 3;
+}
+
+message Empty {}
+message HealthResponse { bool alive = 1; }
+
+message GetRulesInfoRequest {
+  string trace_id = 1;
+}
+
+message GetRulesInfoResponse {
+  string rules_text = 1;
+  string trace_id = 2;
+}
+
+service ReferenceService {
+  rpc ValidateBorrow(ValidateBorrowRequest) returns (ValidateBorrowResponse);
+  rpc ValidateUser(ValidateUserRequest) returns (ValidateUserResponse);
+  rpc ValidatePublication(ValidatePublicationRequest) returns (ValidatePublicationResponse);
+  rpc HealthCheck(Empty) returns (HealthResponse);
+  rpc GetRulesInfo(GetRulesInfoRequest) returns (GetRulesInfoResponse);
+}
