@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package bank.contract;
+
+option java_package = "com.bank.contract";
+option java_multiple_files = true;
+
+service CoreBankService {
+  rpc CreateAccount(CreateAccountRequest) returns (OperationResponse);
+  rpc Deposit(DepositRequest) returns (OperationResponse);
+  rpc Withdraw(WithdrawRequest) returns (OperationResponse);
+  rpc AccrueInterest(AccrueInterestRequest) returns (OperationResponse);
+  rpc GetAccountStatement(AccountByIdRequest) returns (GetAccountStatementResponse);
+  rpc GetAllAccounts(EmptyRequest) returns (GetAllAccountsResponse);
+}
+
+message EmptyRequest {}
+
+message CreateAccountRequest {
+  string owner_name = 1;
+  string account_type = 2;
+}
+
+message DepositRequest {
+  int64 account_id = 1;
+  double amount = 2;
+}
+
+message WithdrawRequest {
+  int64 account_id = 1;
+  double amount = 2;
+}
+
+message AccrueInterestRequest {
+  int64 account_id = 1;
+  double base_percent = 2;
+}
+
+message AccountByIdRequest {
+  int64 account_id = 1;
+}
+
+message OperationResponse {
+  bool success = 1;
+  string message = 2;
+  AccountDto account = 3;
+}
+
+message GetAccountStatementResponse {
+  bool success = 1;
+  string message = 2;
+  AccountDto account = 3;
+}
+
+message GetAllAccountsResponse {
+  repeated AccountDto accounts = 1;
+}
+
+message AccountDto {
+  int64 id = 1;
+  string owner_name = 2;
+  string account_type = 3;
+  double balance = 4;
+  repeated TransactionDto transactions = 5;
+}
+
+message TransactionDto {
+  int64 id = 1;
+  string type = 2;
+  double amount = 3;
+  string created_at = 4;
+}
