@@ -1,0 +1,22 @@
+[
+  {
+    "id": "fb58fe84dc2844ff9db27ca8b04e6dec",
+    "patient_id": "9460a78d3cb247a782df18cdcccd7202",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "prescribed_at": "2027-03-04 18:00",
+    "medicine": "да",
+    "dosage": "да",
+    "instructions": "да",
+    "days": 2
+  },
+  {
+    "id": "2309b3de5a9d42b89a27c2e2072e18b6",
+    "patient_id": "716c247efbc84ca9b10f7c830399be97",
+    "doctor_id": "1c196d8762944e92881c8a69e06ec5e9",
+    "prescribed_at": "2026-05-05 10:00",
+    "medicine": "трдлтёё",
+    "dosage": "5",
+    "instructions": "шлирлшит",
+    "days": 7
+  }
+]

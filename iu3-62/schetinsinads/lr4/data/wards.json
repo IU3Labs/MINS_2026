@@ -1,0 +1,16 @@
+[
+  {
+    "id": "34b56bc0eae143d0acaef3903b92bce9",
+    "number": "001",
+    "name": "палатаодин",
+    "capacity": 4,
+    "is_icu": false
+  },
+  {
+    "id": "e6dd29c815934c8792d0132495b473ae",
+    "number": "5",
+    "name": "oihni",
+    "capacity": 6,
+    "is_icu": true
+  }
+]
