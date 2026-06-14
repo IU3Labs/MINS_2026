@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package ru.iu3.grpc;
+
+
+service ReferenceService {
+  rpc AddRoom(AddRoomRequest) returns (EmptyResponse);
+  rpc LockRoom(RoomIdRequest) returns (EmptyResponse);
+  rpc GetRoom(RoomIdRequest) returns (RoomResponse);
+  rpc ListRooms(TraceRequest) returns (RoomListResponse);
+
+  rpc IssuePass(IssuePassRequest) returns (EmptyResponse);
+  rpc DeactivatePass(PassIdRequest) returns (EmptyResponse);
+  rpc GetPass(PassIdRequest) returns (PassResponse);
+  rpc ListPasses(TraceRequest) returns (PassListResponse);
+}
+
+message TraceRequest {
+  string trace_id = 1;
+}
+
+message EmptyResponse {}
+
+message RoomIdRequest {
+  int32 id = 1;
+  string trace_id = 2;
+}
+
+message PassIdRequest {
+  int32 id = 1;
+  string trace_id = 2;
+}
+
+message AddRoomRequest {
+  string type = 1;
+  int32 id = 2;
+  string name = 3;
+  int32 hourly_rate = 4;
+  string trace_id = 5;
+}
+
+message IssuePassRequest {
+  int32 id = 1;
+  string holder_name = 2;
+  string trace_id = 3;
+}
+
+message RoomResponse {
+  int32 id = 1;
+  string type = 2;
+  string name = 3;
+  int32 hourly_rate = 4;
+  bool locked = 5;
+}
+
+message RoomListResponse {
+  repeated RoomResponse rooms = 1;
+}
+
+message PassResponse {
+  int32 id = 1;
+  string holder_name = 2;
+  bool active = 3;
+}
+
+message PassListResponse {
+  repeated PassResponse passes = 1;
+}

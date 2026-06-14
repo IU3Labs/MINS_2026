@@ -1,0 +1,32 @@
+2026-04-23 01:25:05 [CORE] traceId=01122e34-1809-476b-a755-5e30a833849a ListRooms
+2026-04-23 01:25:05 [CORE] traceId=01122e34-1809-476b-a755-5e30a833849a ListRooms failed: io exception
+2026-04-23 01:26:26 [CORE] traceId=ea3aa4f6-f675-4763-88ab-ef5666ce8f2d AddRoom id=1
+2026-04-23 01:26:26 [CORE] traceId=ea3aa4f6-f675-4763-88ab-ef5666ce8f2d AddRoom failed: io exception
+2026-04-23 01:26:28 [CORE] traceId=4565f0c1-4f7d-455d-ba0e-12d2ae41fad5 AddRoom id=1
+2026-04-23 01:26:28 [CORE] traceId=4565f0c1-4f7d-455d-ba0e-12d2ae41fad5 AddRoom failed: io exception
+2026-04-23 01:26:41 [CORE] traceId=e8a16cbd-2e5b-4c35-b8ca-d4725ceb331e AddRoom id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=e8a16cbd-2e5b-4c35-b8ca-d4725ceb331e AddRoom id=1
+2026-04-23 01:26:41 [CORE] traceId=313dcc69-6977-4305-993b-b1738cd01c9e AddRoom id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=313dcc69-6977-4305-993b-b1738cd01c9e AddRoom id=2
+2026-04-23 01:26:41 [CORE] traceId=ca2feced-558c-4687-9d05-b6ed87ce6424 IssuePass id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=ca2feced-558c-4687-9d05-b6ed87ce6424 IssuePass id=1
+2026-04-23 01:26:41 [CORE] traceId=bd2e1b9d-01f4-40a6-b32d-f6cd6dd5dc31 IssuePass id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=bd2e1b9d-01f4-40a6-b32d-f6cd6dd5dc31 IssuePass id=2
+2026-04-23 01:26:41 [CORE] traceId=f0bb609e-aa52-4431-b229-5d9555dec7b7 GetRoom id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=f0bb609e-aa52-4431-b229-5d9555dec7b7 GetRoom id=1
+2026-04-23 01:26:41 [CORE] traceId=8bf1d91e-e61f-4eab-a55f-d4c901e4fbb0 GetRoom id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=8bf1d91e-e61f-4eab-a55f-d4c901e4fbb0 GetRoom id=1
+2026-04-23 01:26:41 [CORE] traceId=5624cca5-83e5-46e5-a6a2-d397385d65fe GetPass id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=5624cca5-83e5-46e5-a6a2-d397385d65fe GetPass id=1
+2026-04-23 01:26:41 [CORE] traceId=d87b4b78-62bc-4a84-9b51-0c71618fd2ea GetRoom id=1
+2026-04-23 01:26:41 [REFERENCE] traceId=d87b4b78-62bc-4a84-9b51-0c71618fd2ea GetRoom id=1
+2026-04-23 01:26:41 [CORE] traceId=583fd85b-c9f1-4a5a-a430-dea9dcad2849 GetRoom id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=583fd85b-c9f1-4a5a-a430-dea9dcad2849 GetRoom id=2
+2026-04-23 01:26:41 [CORE] traceId=5e6fe5a7-3890-43b9-b050-26a560a9f0c0 GetRoom id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=5e6fe5a7-3890-43b9-b050-26a560a9f0c0 GetRoom id=2
+2026-04-23 01:26:41 [CORE] traceId=638102bd-a1ae-4f68-8889-6dd5c9daa3f2 GetPass id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=638102bd-a1ae-4f68-8889-6dd5c9daa3f2 GetPass id=2
+2026-04-23 01:26:41 [CORE] traceId=e70b06a4-5fe8-4819-b55e-e4f7ce4c39ee GetRoom id=2
+2026-04-23 01:26:41 [REFERENCE] traceId=e70b06a4-5fe8-4819-b55e-e4f7ce4c39ee GetRoom id=2
+2026-04-23 01:26:44 [CORE] traceId=288412a3-2fe5-4eb2-8b76-6b24aa0c3b35 ListRooms
+2026-04-23 01:26:44 [REFERENCE] traceId=288412a3-2fe5-4eb2-8b76-6b24aa0c3b35 ListRooms
