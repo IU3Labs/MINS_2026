@@ -1,0 +1,64 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.9.4'
+}
+
+group = 'ru.iu3.lab4'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Чистый gRPC без Spring Boot
+    implementation 'io.grpc:grpc-netty-shaded:1.62.2'
+    implementation 'io.grpc:grpc-protobuf:1.62.2'
+    implementation 'io.grpc:grpc-stub:1.62.2'
+
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
+    // Логирование
+    implementation 'org.slf4j:slf4j-api:2.0.12'
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+// Указываем Gradle брать proto-файлы из общей папки ../proto
+sourceSets {
+    main {
+        proto {
+            srcDir '../proto'
+        }
+    }
+}
+
+protobuf {
+    protoc { artifact = 'com.google.protobuf:protoc:3.25.3' }
+    plugins { grpc { artifact = 'io.grpc:protoc-gen-grpc-java:1.62.2' } }
+    generateProtoTasks {
+        all().each { task -> task.plugins { grpc {} } }
+    }
+}
+
+// Указываем main-класс для удобного запуска из Gradle
+tasks.register('runCoreServer', JavaExec) {
+    mainClass = 'ru.iu3.lab4.coreservice.server.CoreServer'
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+tasks.named('test') { useJUnitPlatform() }
+
+// Исправляем кодировку
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
