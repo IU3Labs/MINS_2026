@@ -1,0 +1,166 @@
+syntax = "proto3";
+option java_package = "com.university.proto.reference";
+option java_multiple_files = true;
+package reference;
+
+service ReferenceService {
+  rpc ValidateStudent(ValidateStudentRequest) returns (ValidateStudentResponse);
+
+  rpc ValidateLesson(ValidateLessonRequest) returns (ValidateLessonResponse);
+
+  rpc ListCourses(ListCoursesRequest) returns (ListCoursesResponse);
+
+  rpc SaveStudent(SaveStudentRequest) returns (SaveStudentResponse);
+  rpc SaveGrade(SaveGradeRequest) returns (SaveGradeResponse);
+  rpc SaveAttendance(SaveAttendanceRequest) returns (SaveAttendanceResponse);
+
+  rpc GetStudentGrades(GetStudentGradesRequest) returns (GetStudentGradesResponse);
+  rpc GetStudentAverage(GetStudentAverageRequest) returns (GetStudentAverageResponse);
+
+  rpc SaveLesson(SaveLessonRequest) returns (SaveLessonResponse);
+  rpc GetSchedule(ReferenceScheduleRequest) returns (ReferenceScheduleResponse);
+
+  rpc GetNotificationHistory(GetNotificationHistoryRequest) returns (GetNotificationHistoryResponse);
+}
+
+
+message ValidateStudentRequest {
+  int32 student_id = 1;
+  string trace_id = 2;
+}
+
+message ValidateStudentResponse {
+  bool exists = 1;
+  string student_name = 2;
+  string error = 3;
+}
+
+message ValidateLessonRequest {
+  int32 lesson_id = 1;       // ID занятия для проверки
+  string trace_id = 2;       // ID трассировки
+}
+
+message ValidateLessonResponse {
+  bool exists = 1;           // true = занятие найдено
+  string lesson_info = 2;    // Информация о занятии (курс, преподаватель, аудитория)
+  string error = 3;          // Сообщение об ошибке
+}
+
+message ListCoursesRequest {
+  string trace_id = 1;       // ID трассировки
+}
+
+message ListCoursesResponse {
+  repeated string courses = 1;  // Список названий курсов
+  string error = 2;             // Сообщение об ошибке
+}
+
+message SaveStudentRequest {
+  string name = 1;           // Имя студента
+  string trace_id = 2;       // Trace ID
+}
+
+message SaveStudentResponse {
+  int32 student_id = 1;      // ID нового студента (или -1 при ошибке)
+  string error = 2;          // Сообщение об ошибке
+}
+
+message SaveGradeRequest {
+  int32 student_id = 1;      // ID студента
+  string course_name = 2;    // Название курса
+  int32 value = 3;           // Оценка (1-5)
+  string trace_id = 4;       // Trace ID
+}
+
+message SaveGradeResponse {
+  bool success = 1;
+  string error = 2;
+}
+
+message SaveAttendanceRequest {
+  int32 student_id = 1;
+  int32 lesson_id = 2;
+  string status = 3;
+  string trace_id = 4;
+}
+
+message SaveAttendanceResponse {
+  bool success = 1;          // true = сохранено успешно
+  string error = 2;          // Сообщение об ошибке
+}
+
+// ===== НОВЫЕ СООБЩЕНИЯ: Получение данных для отчётов =====
+
+message GetStudentGradesRequest {
+  int32 student_id = 1;
+  string trace_id = 2;
+}
+
+message GetStudentGradesResponse {
+  repeated GradeData grades = 1;
+  string error = 2;
+}
+
+message GradeData {
+  string course_name = 1;
+  int32 value = 2;
+  string date = 3;
+}
+
+message GetStudentAverageRequest {
+  int32 student_id = 1;
+  string trace_id = 2;
+}
+
+message GetStudentAverageResponse {
+  double average = 1;
+  int32 count = 2;
+  string error = 3;
+}
+
+message SaveLessonRequest {
+  string course_name = 1;
+  string teacher = 2;
+  string room = 3;
+  string date_time = 4;
+  string trace_id = 5;
+}
+
+message SaveLessonResponse {
+  int32 lesson_id = 1;
+  string error = 2;
+}
+
+message ReferenceScheduleRequest {
+  string day_filter = 1;
+  string trace_id = 2;
+}
+
+message ReferenceScheduleResponse {
+  repeated ReferenceLessonData lessons = 1;
+  string error = 2;
+}
+
+message ReferenceLessonData {
+  int32 lesson_id = 1;
+  string course_name = 2;
+  string teacher = 3;
+  string room = 4;
+  string date_time = 5;
+}
+
+message GetNotificationHistoryRequest {
+  string observer_name = 1;
+  string trace_id = 2;
+}
+
+message GetNotificationHistoryResponse {
+  repeated NotificationEntry entries = 1;
+  string error = 2;
+}
+
+message NotificationEntry {
+  string observer_name = 1;
+  string message = 2;
+  string timestamp = 3;
+}
