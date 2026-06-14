@@ -1,0 +1,29 @@
+[
+  {
+    "id": 2,
+    "ownerName": "claude",
+    "accountType": "SAVINGS",
+    "balance": 2.0
+  }
+,
+  {
+    "id": 1,
+    "ownerName": "qwen",
+    "accountType": "PREMIUM",
+    "balance": 9995.0
+  }
+,
+  {
+    "id": 3,
+    "ownerName": "qqq",
+    "accountType": "STANDARD",
+    "balance": 107.0
+  }
+,
+  {
+    "id": 4,
+    "ownerName": "chatGPT",
+    "accountType": "SAVINGS",
+    "balance": 0.0
+  }
+]
