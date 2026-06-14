@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ru.mins.parking.proto";
+option java_outer_classname = "ParkingProto";
+
+package parking;
+
+service ParkingReferenceService {
+  rpc GetTariffByType (TariffRequest) returns (TariffResponse);
+  rpc GetSpotTypeInfo (SpotTypeRequest) returns (SpotTypeResponse);
+  rpc ValidateVehicle (VehicleValidationRequest) returns (VehicleValidationResponse);
+  rpc GetVipDiscount (VipDiscountRequest) returns (VipDiscountResponse);
+}
+
+enum SpotTypeProto {
+  SPOT_TYPE_UNSPECIFIED = 0;
+  REGULAR = 1;
+  DISABLED = 2;
+  ELECTRIC = 3;
+}
+
+enum VehicleTypeProto {
+  VEHICLE_TYPE_UNSPECIFIED = 0;
+  CAR = 1;
+  MOTORCYCLE = 2;
+  ELECTRIC_CAR = 3;
+  ACCESSIBLE_VEHICLE = 4;
+}
+
+enum TariffTypeProto {
+  TARIFF_TYPE_UNSPECIFIED = 0;
+  HOURLY = 1;
+  DAILY = 2;
+  NIGHT = 3;
+}
+
+message TariffRequest {
+  TariffTypeProto tariff_type = 1;
+}
+
+message TariffResponse {
+  TariffTypeProto tariff_type = 1;
+  double base_rate = 2;
+  double extra_hour_rate = 3;
+  int32 included_hours = 4;
+}
+
+message SpotTypeRequest {
+  SpotTypeProto spot_type = 1;
+}
+
+message SpotTypeResponse {
+  SpotTypeProto spot_type = 1;
+  string display_name = 2;
+  double price_coefficient = 3;
+  repeated VehicleTypeProto allowed_vehicle_types = 4;
+}
+
+message VehicleValidationRequest {
+  string license_plate = 1;
+  VehicleTypeProto vehicle_type = 2;
+  SpotTypeProto requested_spot_type = 3;
+}
+
+message VehicleValidationResponse {
+  bool valid = 1;
+  string message = 2;
+}
+
+message VipDiscountRequest {
+  string license_plate = 1;
+}
+
+message VipDiscountResponse {
+  bool vip = 1;
+  double discount_percent = 2;
+}
