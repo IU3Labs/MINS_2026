@@ -1,0 +1,77 @@
+[2026-04-16 17:38:56] Событие: Бронирование отменено Бронь ID: 1 Статус: Отменено
+[2026-04-29 14:11:02] Событие: Бронирование оплачено на сумму 35000 руб. Бронь ID: 1 Статус: Оплачено
+[2026-04-29 14:36:14] Событие: Бронирование оплачено на сумму 38250.00 руб. | Бронь ID: 1 | Статус: Оплачено
+[2026-04-30 01:38:45] [TraceID: a351d260-9579-4bdf-ba9f-632c4345a11a] ClientAuthService: регистрация клиента 123@gmail.com
+[2026-04-30 01:38:45] [TraceID: a351d260-9579-4bdf-ba9f-632c4345a11a] Service A: запрос клиента по email 123@gmail.com к Service B
+[2026-04-30 01:38:45] [TraceID: a351d260-9579-4bdf-ba9f-632c4345a11a] Service A: клиент не найден - NOT_FOUND: Клиент не найден: 123@gmail.com
+[2026-04-30 01:38:45] [TraceID: a351d260-9579-4bdf-ba9f-632c4345a11a] ClientAuthService: регистрация временно недоступна
+[2026-04-30 01:39:53] [TraceID: 792c4541-9ef5-4247-834e-a8c81e38fb42] ClientAuthService: вход клиента test@test.com
+[2026-04-30 01:39:53] [TraceID: 792c4541-9ef5-4247-834e-a8c81e38fb42] Service A: запрос клиента по email test@test.com к Service B
+[2026-04-30 01:39:54] [TraceID: 792c4541-9ef5-4247-834e-a8c81e38fb42] Service A: клиент найден: test
+[2026-04-30 01:39:54] [TraceID: 792c4541-9ef5-4247-834e-a8c81e38fb42] ClientAuthService: вход выполнен для test
+[2026-04-30 01:40:28] [TraceID: fc559727-4f0b-4f87-9412-1a4ec864a4e0] AdminService: запрос всех туров через gRPC
+[2026-04-30 01:40:28] [TraceID: fc559727-4f0b-4f87-9412-1a4ec864a4e0] Service A: запрос всех туров к Service B
+[2026-04-30 01:40:28] [TraceID: fc559727-4f0b-4f87-9412-1a4ec864a4e0] Service A: получено туров: 4
+[2026-04-30 01:40:28] [TraceID: fc559727-4f0b-4f87-9412-1a4ec864a4e0] AdminService: получено 4 туров
+[2026-04-30 01:42:46] [TraceID: 3ce92208-2fe0-482c-ad9d-5d23a2711681] AdminService: запрос всех туров через gRPC
+[2026-04-30 01:42:46] [TraceID: 3ce92208-2fe0-482c-ad9d-5d23a2711681] Service A: запрос всех туров к Service B
+[2026-04-30 01:42:46] [TraceID: 3ce92208-2fe0-482c-ad9d-5d23a2711681] Service A: получено туров: 4
+[2026-04-30 01:42:46] [TraceID: 3ce92208-2fe0-482c-ad9d-5d23a2711681] AdminService: получено 4 туров
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] BookingService: начало бронирования клиент=1, тур=1
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] Service A: запрос клиента 1 к Service B
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] Service A: клиент получен: test
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] Service A: запрос тура 1 к Service B
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] Service A: тур получен: Золотое кольцо
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] BookingService: скидка=0%, итоговая цена=35000
+[2026-04-30 01:42:56] [TraceID: b9ce2f18-3a65-4d72-89ed-d9788920eed4] BookingService: бронирование создано, id=1
+[2026-04-30 01:43:31] Событие: Бронирование оплачено на сумму 35000 руб. | Бронь ID: 1 | Статус: Оплачено
+[2026-04-30 01:44:21] [TraceID: 6c1354ed-3f6c-41c3-9dc3-805001469fcb] AdminService: запрос всех туров через gRPC
+[2026-04-30 01:44:21] [TraceID: 6c1354ed-3f6c-41c3-9dc3-805001469fcb] Service A: запрос всех туров к Service B
+[2026-04-30 01:44:21] [TraceID: 6c1354ed-3f6c-41c3-9dc3-805001469fcb] Service A: получено туров: 4
+[2026-04-30 01:44:21] [TraceID: 6c1354ed-3f6c-41c3-9dc3-805001469fcb] AdminService: получено 4 туров
+[2026-04-30 01:44:28] [TraceID: 85839d5b-f388-4c5a-9aa2-991b018ba477] AdminService: запрос всех туров через gRPC
+[2026-04-30 01:44:28] [TraceID: 85839d5b-f388-4c5a-9aa2-991b018ba477] Service A: запрос всех туров к Service B
+[2026-04-30 01:44:28] [TraceID: 85839d5b-f388-4c5a-9aa2-991b018ba477] Service A: получено туров: 4
+[2026-04-30 01:44:28] [TraceID: 85839d5b-f388-4c5a-9aa2-991b018ba477] AdminService: получено 4 туров
+[2026-04-30 02:20:21] [TraceID: 0a85c7cc-0a9d-4919-b2ca-80583cd1abef] ClientAuthService: вход клиента test@test.com
+[2026-04-30 02:20:21] [TraceID: 0a85c7cc-0a9d-4919-b2ca-80583cd1abef] Service A: запрос клиента по email test@test.com к Service B
+[2026-04-30 02:20:22] [TraceID: 0a85c7cc-0a9d-4919-b2ca-80583cd1abef] Service A: клиент найден: test
+[2026-04-30 02:20:22] [TraceID: 0a85c7cc-0a9d-4919-b2ca-80583cd1abef] ClientAuthService: вход выполнен для test
+[2026-04-30 02:20:27] [TraceID: 8c27851a-6d4e-4945-a4ba-23d0576223ec] AdminService: запрос всех туров через gRPC
+[2026-04-30 02:20:27] [TraceID: 8c27851a-6d4e-4945-a4ba-23d0576223ec] Service A: запрос всех туров к Service B
+[2026-04-30 02:20:27] [TraceID: 8c27851a-6d4e-4945-a4ba-23d0576223ec] Service A: получено туров: 4
+[2026-04-30 02:20:27] [TraceID: 8c27851a-6d4e-4945-a4ba-23d0576223ec] AdminService: получено 4 туров
+[2026-04-30 02:20:33] [TraceID: 7b298dda-9ced-49a3-8189-881d498d0566] AdminService: запрос всех туров через gRPC
+[2026-04-30 02:20:33] [TraceID: 7b298dda-9ced-49a3-8189-881d498d0566] Service A: запрос всех туров к Service B
+[2026-04-30 02:20:33] [TraceID: 7b298dda-9ced-49a3-8189-881d498d0566] Service A: получено туров: 4
+[2026-04-30 02:20:33] [TraceID: 7b298dda-9ced-49a3-8189-881d498d0566] AdminService: получено 4 туров
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] BookingService: начало бронирования клиент=1, тур=1
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] Service A: запрос клиента 1 к Service B
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] Service A: клиент получен: test
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] Service A: запрос тура 1 к Service B
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] Service A: тур получен: Золотое кольцо
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] BookingService: скидка=0%, итоговая цена=35000
+[2026-04-30 02:20:37] [TraceID: a3388364-f12e-4c5c-af42-cb95aebd6f4c] BookingService: бронирование создано, id=1
+[2026-04-30 02:20:55] Событие: Бронирование оплачено на сумму 35000 руб. | Бронь ID: 1 | Статус: Оплачено
+[2026-04-30 13:31:47] [TraceID: e555554d-8d79-4618-ad69-b003171060e6] ClientAuthService: регистрация клиента nasty@gmail.com
+[2026-04-30 13:31:47] [TraceID: e555554d-8d79-4618-ad69-b003171060e6] Service A: запрос клиента по email nasty@gmail.com к Service B
+[2026-04-30 13:31:48] [TraceID: e555554d-8d79-4618-ad69-b003171060e6] Service A: клиент не найден - NOT_FOUND: Клиент не найден: nasty@gmail.com
+[2026-04-30 13:31:48] [TraceID: e555554d-8d79-4618-ad69-b003171060e6] ClientAuthService: регистрация временно недоступна
+[2026-04-30 13:36:36] [TraceID: ac04f85e-52fd-4448-a775-db80d18558ed] ClientAuthService: вход клиента test@test.com
+[2026-04-30 13:36:36] [TraceID: ac04f85e-52fd-4448-a775-db80d18558ed] Service A: запрос клиента по email test@test.com к Service B
+[2026-04-30 13:36:36] [TraceID: ac04f85e-52fd-4448-a775-db80d18558ed] Service A: клиент найден: test
+[2026-04-30 13:36:36] [TraceID: ac04f85e-52fd-4448-a775-db80d18558ed] ClientAuthService: вход выполнен для test
+[2026-04-30 13:40:35] [TraceID: 9468273b-ce3c-41d1-99f2-11eeabde8fac] AdminService: запрос всех туров через gRPC
+[2026-04-30 13:40:35] [TraceID: 9468273b-ce3c-41d1-99f2-11eeabde8fac] Service A: запрос всех туров к Service B
+[2026-04-30 13:40:35] [TraceID: 9468273b-ce3c-41d1-99f2-11eeabde8fac] Service A: получено туров: 4
+[2026-04-30 13:40:35] [TraceID: 9468273b-ce3c-41d1-99f2-11eeabde8fac] AdminService: получено 4 туров
+[2026-04-30 13:52:17] [TraceID: 5daec35f-f790-490e-ae46-ef141c2fb20c] AdminService: запрос всех туров через gRPC
+[2026-04-30 13:52:17] [TraceID: 5daec35f-f790-490e-ae46-ef141c2fb20c] Service A: запрос всех туров к Service B
+[2026-04-30 13:52:17] [TraceID: 5daec35f-f790-490e-ae46-ef141c2fb20c] Service A: ошибка при получении туров - UNAVAILABLE: io exception
+[2026-04-30 13:52:17] [TraceID: 5daec35f-f790-490e-ae46-ef141c2fb20c] AdminService: получено 0 туров
+[2026-04-30 18:53:00] [TraceID: a01d111b-7f93-41e4-bc39-c644e6fd6944] ClientAuthService: вход клиента 123123
+[2026-04-30 18:53:00] [TraceID: a01d111b-7f93-41e4-bc39-c644e6fd6944] ClientAuthService: ОШИБКА - Service B недоступен: Неверный формат email. Email должен быть в формате user@example.com
+[2026-04-30 18:53:33] [TraceID: 32d2b8d8-29c1-4eae-8ec7-8f8b2af2fea6] ClientAuthService: вход клиента 2332@easdad.com
+[2026-04-30 18:53:33] [TraceID: 32d2b8d8-29c1-4eae-8ec7-8f8b2af2fea6] Service A: запрос клиента по email 2332@easdad.com к Service B
+[2026-04-30 18:53:33] [TraceID: 32d2b8d8-29c1-4eae-8ec7-8f8b2af2fea6] Service A: клиент не найден - UNAVAILABLE: io exception
+[2026-04-30 18:53:33] [TraceID: 32d2b8d8-29c1-4eae-8ec7-8f8b2af2fea6] ClientAuthService: клиент не найден: 2332@easdad.com
