@@ -1,0 +1,31 @@
+2026-05-20 18:19:34,964 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 18:19:34,969 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:20:23,131 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 18:20:34,273 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 18:26:22,300 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 18:26:25,061 - INFO - trace_id=trace-test-ok ValidateSale medicine=not-existing quantity=1
+2026-05-20 18:28:13,403 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 18:28:16,233 - INFO - trace_id=trace-test-core-ref ValidateSale medicine=not-existing quantity=1
+2026-05-20 19:17:25,882 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 19:17:28,656 - INFO - trace_id=trace-status-not-found ValidateSale medicine=not-existing quantity=1
+2026-05-20 19:17:28,656 - WARNING - trace_id=trace-status-not-found medicine not found: not-existing
+2026-05-20 19:37:17,790 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-20 19:38:33,101 - INFO - trace_id=4e972125cbaa434f838ca68844afa9d1 ListMedicines
+2026-05-30 11:49:18,788 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-30 12:04:46,069 - INFO - trace_id=921dcc226aa6410ebd3f32dde904530b ListMedicines
+2026-05-30 12:15:48,481 - INFO - trace_id=aa71fa6e5f1541238d3d5fc7c89b65e3 SearchMedicines query=Золофт
+2026-05-30 12:15:50,580 - INFO - trace_id=1718fdd102424a599db296616220687b ListMedicines
+2026-05-30 12:16:00,234 - INFO - trace_id=ddd7a5c42cf3433d8ee91e6b712b7e10 SearchMedicines query=Проавврв
+2026-05-30 12:17:38,726 - INFO - trace_id=a810831d752844aba884af37e0b3830e ValidateSale medicine=Парацетамол quantity=900
+2026-05-30 12:35:50,726 - INFO - Reference Service started on 127.0.0.1:50052
+2026-05-30 12:48:49,683 - INFO - trace_id=trace-check-ok ListMedicines
+2026-05-30 12:48:49,686 - INFO - trace_id=trace-check-ok-list ListMedicines
+2026-05-30 12:48:49,688 - INFO - trace_id=trace-check-invalid-empty ValidateSale medicine= quantity=1
+2026-05-30 12:48:49,773 - INFO - trace_id=trace-check-invalid-zero ValidateSale medicine=Парацетамол quantity=0
+2026-05-30 12:48:49,852 - INFO - trace_id=trace-check-not-found ValidateSale medicine=__missing_lab4__ quantity=1
+2026-05-30 12:48:49,852 - WARNING - trace_id=trace-check-not-found medicine not found: __missing_lab4__
+2026-05-30 12:48:49,929 - INFO - trace_id=trace-check-expired ValidateSale medicine=Итоприд quantity=1
+2026-05-30 12:48:50,003 - INFO - trace_id=trace-check-prescription ValidateSale medicine=Омепразол quantity=1
+2026-05-30 12:48:50,081 - INFO - trace_id=trace-check-stock ValidateSale medicine=Парацетамол quantity=16
+2026-05-30 12:49:07,301 - INFO - trace_id=trace-check-unavailable ValidateSale medicine=anything quantity=1
+2026-05-30 12:49:07,301 - WARNING - trace_id=trace-check-unavailable medicine not found: anything

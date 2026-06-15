@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+package pharmacy;
+
+service ReferenceService {
+  rpc AddMedicine(AddMedicineRequest) returns (OperationResult);
+  rpc ListMedicines(Empty) returns (MedicineList);
+  rpc SearchMedicines(SearchRequest) returns (MedicineList);
+  rpc ValidateSale(ValidateSaleRequest) returns (ValidateSaleResponse);
+  rpc DecreaseMedicineQuantity(UpdateQuantityRequest) returns (OperationResult);
+  rpc CheckExpiration(ExpirationRequest) returns (ExpirationStatus);
+  rpc RemoveExpired(Empty) returns (MedicineList);
+}
+
+service CoreService {
+  rpc AddMedicine(AddMedicineRequest) returns (OperationResult);
+  rpc ListMedicines(Empty) returns (MedicineList);
+  rpc SearchMedicines(SearchRequest) returns (MedicineList);
+  rpc CheckExpiration(ExpirationRequest) returns (ExpirationStatus);
+  rpc RemoveExpired(Empty) returns (MedicineList);
+  rpc SellMedicine(SellMedicineRequest) returns (SellMedicineResponse);
+  rpc ListSales(Empty) returns (SaleList);
+  rpc CalculateFridayDiscount(DiscountRequest) returns (DiscountResponse);
+}
+
+message Empty {}
+
+message Medicine {
+  string name = 1;
+  string manufacturer = 2;
+  double price = 3;
+  string expiration_date = 4;
+  bool prescription_required = 5;
+  int32 quantity = 6;
+}
+
+message AddMedicineRequest {
+  Medicine medicine = 1;
+}
+
+message MedicineList {
+  repeated Medicine medicines = 1;
+}
+
+message SearchRequest {
+  string query = 1;
+}
+
+message ValidateSaleRequest {
+  string medicine_name = 1;
+  int32 quantity = 2;
+  bool has_prescription = 3;
+}
+
+message ValidateSaleResponse {
+  bool ok = 1;
+  string message = 2;
+  Medicine medicine = 3;
+}
+
+message UpdateQuantityRequest {
+  string medicine_name = 1;
+  int32 quantity = 2;
+}
+
+message OperationResult {
+  bool ok = 1;
+  string message = 2;
+}
+
+message ExpirationRequest {
+  int32 days = 1;
+}
+
+message ExpirationStatus {
+  repeated Medicine expired = 1;
+  repeated Medicine expiring_soon = 2;
+}
+
+message SellMedicineRequest {
+  string medicine_name = 1;
+  int32 quantity = 2;
+  bool has_prescription = 3;
+}
+
+message SellMedicineResponse {
+  bool ok = 1;
+  string message = 2;
+  double total = 3;
+}
+
+message Sale {
+  string medicine_name = 1;
+  int32 quantity = 2;
+  double summary = 3;
+  bool prescription = 4;
+  string date = 5;
+}
+
+message SaleList {
+  repeated Sale sales = 1;
+}
+
+message DiscountRequest {
+  string medicine_name = 1;
+  int32 quantity = 2;
+}
+
+message DiscountResponse {
+  bool ok = 1;
+  string message = 2;
+}

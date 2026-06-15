@@ -1,0 +1,47 @@
+2026-05-20 18:20:41,013 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:26:22,443 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:26:25,055 - INFO - trace_id=trace-test-ok SellMedicine medicine=not-existing quantity=1
+2026-05-20 18:26:25,063 - WARNING - trace_id=trace-test-ok sale rejected: Лекарство не найдено
+2026-05-20 18:26:42,562 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:26:45,212 - INFO - trace_id=trace-test-down SellMedicine medicine=anything quantity=1
+2026-05-20 18:26:47,320 - ERROR - trace_id=trace-test-down Reference Service is unavailable at 127.0.0.1:50052
+2026-05-20 18:28:13,576 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:28:16,228 - INFO - trace_id=trace-test-core-ref SellMedicine medicine=not-existing quantity=1
+2026-05-20 18:28:16,243 - WARNING - trace_id=trace-test-core-ref sale rejected: Лекарство не найдено
+2026-05-20 18:28:32,669 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 18:28:35,213 - INFO - trace_id=trace-test-ref-down SellMedicine medicine=anything quantity=1
+2026-05-20 18:28:37,282 - ERROR - trace_id=trace-test-ref-down Reference Service is unavailable at 127.0.0.1:50052
+2026-05-20 19:17:26,057 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 19:17:28,652 - INFO - trace_id=trace-status-not-found SellMedicine medicine=not-existing quantity=1
+2026-05-20 19:17:28,699 - WARNING - trace_id=trace-status-not-found downstream grpc error code=NOT_FOUND details=Лекарство не найдено
+2026-05-20 19:17:45,363 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 19:17:47,997 - INFO - trace_id=trace-status-unavailable SellMedicine medicine=anything quantity=1
+2026-05-20 19:17:50,108 - ERROR - trace_id=trace-status-unavailable Reference Service is unavailable at 127.0.0.1:50052
+2026-05-20 19:37:49,686 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-20 19:38:33,096 - INFO - trace_id=4e972125cbaa434f838ca68844afa9d1 ListMedicines
+2026-05-30 11:49:28,216 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-30 12:04:46,064 - INFO - trace_id=921dcc226aa6410ebd3f32dde904530b ListMedicines
+2026-05-30 12:15:48,480 - INFO - trace_id=aa71fa6e5f1541238d3d5fc7c89b65e3 SearchMedicines query=Золофт
+2026-05-30 12:15:50,579 - INFO - trace_id=1718fdd102424a599db296616220687b ListMedicines
+2026-05-30 12:16:00,233 - INFO - trace_id=ddd7a5c42cf3433d8ee91e6b712b7e10 SearchMedicines query=Проавврв
+2026-05-30 12:17:38,725 - INFO - trace_id=a810831d752844aba884af37e0b3830e SellMedicine medicine=Парацетамол quantity=900
+2026-05-30 12:17:38,772 - WARNING - trace_id=a810831d752844aba884af37e0b3830e downstream grpc error code=RESOURCE_EXHAUSTED details=Not enough medicine in stock
+2026-05-30 12:35:57,698 - INFO - Core Service started on 127.0.0.1:50051
+2026-05-30 12:48:49,679 - INFO - trace_id=trace-check-ok ListMedicines
+2026-05-30 12:48:49,685 - INFO - trace_id=trace-check-ok-list ListMedicines
+2026-05-30 12:48:49,688 - INFO - trace_id=trace-check-invalid-empty SellMedicine medicine= quantity=1
+2026-05-30 12:48:49,732 - WARNING - trace_id=trace-check-invalid-empty downstream grpc error code=INVALID_ARGUMENT details=Medicine name is required
+2026-05-30 12:48:49,771 - INFO - trace_id=trace-check-invalid-zero SellMedicine medicine=Парацетамол quantity=0
+2026-05-30 12:48:49,813 - WARNING - trace_id=trace-check-invalid-zero downstream grpc error code=INVALID_ARGUMENT details=Quantity must be positive
+2026-05-30 12:48:49,851 - INFO - trace_id=trace-check-not-found SellMedicine medicine=__missing_lab4__ quantity=1
+2026-05-30 12:48:49,893 - WARNING - trace_id=trace-check-not-found downstream grpc error code=NOT_FOUND details=Лекарство не найдено
+2026-05-30 12:48:49,929 - INFO - trace_id=trace-check-expired SellMedicine medicine=Итоприд quantity=1
+2026-05-30 12:48:49,968 - WARNING - trace_id=trace-check-expired downstream grpc error code=FAILED_PRECONDITION details=Medicine is expired
+2026-05-30 12:48:50,002 - INFO - trace_id=trace-check-prescription SellMedicine medicine=Омепразол quantity=1
+2026-05-30 12:48:50,044 - WARNING - trace_id=trace-check-prescription downstream grpc error code=PERMISSION_DENIED details=Prescription is required
+2026-05-30 12:48:50,080 - INFO - trace_id=trace-check-stock SellMedicine medicine=Парацетамол quantity=16
+2026-05-30 12:48:50,123 - WARNING - trace_id=trace-check-stock downstream grpc error code=RESOURCE_EXHAUSTED details=Not enough medicine in stock
+2026-05-30 12:49:07,298 - INFO - trace_id=trace-check-unavailable SellMedicine medicine=anything quantity=1
+2026-05-30 12:49:07,349 - WARNING - trace_id=trace-check-unavailable downstream grpc error code=NOT_FOUND details=Лекарство не найдено
+2026-05-30 12:50:00,485 - INFO - trace_id=trace-check-unavailable-isolated SellMedicine medicine=anything quantity=1
+2026-05-30 12:50:02,580 - ERROR - trace_id=trace-check-unavailable-isolated Reference Service is unavailable at 127.0.0.1:59999

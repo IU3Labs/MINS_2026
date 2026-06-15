@@ -1,0 +1,14 @@
+2026-05-20 19:38:33,092 - INFO - trace_id=4e972125cbaa434f838ca68844afa9d1 menu choice=2
+2026-05-30 12:04:32,215 - INFO - trace_id=1c58404190734c1ca546301bd3297aac menu choice=1
+2026-05-30 12:04:46,050 - INFO - trace_id=921dcc226aa6410ebd3f32dde904530b menu choice=2
+2026-05-30 12:15:41,454 - INFO - trace_id=aa71fa6e5f1541238d3d5fc7c89b65e3 menu choice=3
+2026-05-30 12:15:50,578 - INFO - trace_id=1718fdd102424a599db296616220687b menu choice=2
+2026-05-30 12:15:52,957 - INFO - trace_id=ddd7a5c42cf3433d8ee91e6b712b7e10 menu choice=3
+2026-05-30 12:17:06,659 - INFO - trace_id=429d5beb57104420a3c68bcba2be4aab menu choice=4
+2026-05-30 12:17:29,494 - INFO - trace_id=a810831d752844aba884af37e0b3830e menu choice=4
+2026-05-30 12:17:59,452 - INFO - trace_id=c665e38b00d44049a1bb782a45fc1a65 menu choice=4
+2026-05-30 12:36:07,563 - INFO - trace_id=dc525da43d74494fa014ba4f918681f7 menu choice=4
+2026-05-30 12:46:19,143 - INFO - trace_id=1830695b859641368382d2f1ddb1c91f menu choice=4
+2026-05-30 12:46:19,143 - WARNING - trace_id=1830695b859641368382d2f1ddb1c91f invalid input: ¬ведите целое число
+2026-05-30 12:47:08,887 - INFO - trace_id=d24694914673441ca80282099d412ad9 menu choice=4
+2026-05-30 12:47:14,963 - WARNING - trace_id=d24694914673441ca80282099d412ad9 invalid input: ¬ведите целое число
