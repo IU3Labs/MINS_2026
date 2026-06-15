@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package parking.ref;
+
+option java_package = "org.parking.grpc";
+option java_multiple_files = true;
+
+message ValidationRequest {
+  string trace_id = 1;
+  string license_plate = 2;
+}
+
+message ValidationResponse {
+  string trace_id = 1;
+  bool is_allowed = 2;
+  string message = 3;
+  double hourly_rate = 4;
+}
+
+service ReferenceService {
+  rpc GetParkingRules(ValidationRequest) returns (ValidationResponse);
+}
+
+
+//TODO rpc статус кода разобраться, реализовать использование как минимум трех кодов, понять разницу между grpc статус кодами и http статус кодами
+//TODO L из SOLID + DRY + показать их в коде
