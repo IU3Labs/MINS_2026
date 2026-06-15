@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package bank.ref;
+
+option java_package = "ru.bmstu.grpc";
+option java_multiple_files = true;
+
+message ValidationRequest {
+  string trace_id = 1;
+  string account_number = 2;
+}
+
+message ValidationResponse {
+  string trace_id = 1;
+  bool is_allowed = 2;
+  string message = 3;
+  double interest_rate = 4;
+}
+
+service ReferenceService {
+  rpc GetAccountInfo(ValidationRequest) returns (ValidationResponse);
+}
